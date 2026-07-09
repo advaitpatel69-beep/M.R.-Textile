@@ -1,0 +1,194 @@
+/* ==========================================================================
+   GALLERY — masonry grid + shared lightbox
+   ========================================================================== */
+
+.masonry {
+  columns: 4;
+  column-gap: var(--space-sm);
+}
+
+.masonry__item {
+  break-inside: avoid;
+  margin-bottom: var(--space-sm);
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: zoom-in;
+  box-shadow: var(--shadow-sm);
+}
+
+.masonry__item img {
+  width: 100%;
+  display: block;
+  transition: transform var(--dur-slow) var(--ease-silk), filter var(--dur-med) var(--ease-silk);
+}
+
+.masonry__item:hover img,
+.masonry__item:focus-visible img {
+  transform: scale(1.06);
+}
+
+.masonry__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(36, 8, 15, 0.78), rgba(36, 8, 15, 0) 60%);
+  opacity: 0;
+  transition: opacity var(--dur-fast) var(--ease-silk);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-sm);
+}
+
+.masonry__item:hover .masonry__overlay,
+.masonry__item:focus-visible .masonry__overlay {
+  opacity: 1;
+}
+
+.masonry__caption {
+  color: var(--color-on-dark);
+  font-size: var(--fs-body-sm);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.masonry__caption svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-gold-light);
+}
+
+.gallery-loadmore {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+
+/* ---------------------------- LIGHTBOX (shared) ---------------------------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dur-med) var(--ease-silk), visibility var(--dur-med) var(--ease-silk);
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 10, 8, 0.94);
+  backdrop-filter: blur(6px);
+}
+
+.lightbox__stage {
+  position: relative;
+  z-index: 2;
+  width: min(90vw, 1100px);
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox__frame {
+  position: relative;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-burgundy);
+  max-height: 74vh;
+  display: flex;
+}
+
+.lightbox__frame img {
+  max-height: 74vh;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  margin-inline: auto;
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity var(--dur-med) var(--ease-silk), transform var(--dur-med) var(--ease-silk);
+}
+
+.lightbox__frame img.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.lightbox__caption {
+  margin-top: var(--space-sm);
+  color: var(--color-on-dark-soft);
+  font-size: var(--fs-body-sm);
+  letter-spacing: var(--ls-wide);
+  text-align: center;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: clamp(0.75rem, 3vw, 2rem);
+  right: clamp(0.75rem, 3vw, 2rem);
+  z-index: 3;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-dark);
+  color: var(--color-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--dur-fast) var(--ease-silk), transform var(--dur-fast) var(--ease-silk);
+}
+
+.lightbox__close:hover,
+.lightbox__close:focus-visible {
+  background: var(--color-gold);
+  color: var(--color-maroon-deep);
+  transform: rotate(90deg);
+}
+
+.lightbox__close svg { width: 18px; height: 18px; }
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-dark);
+  color: var(--color-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: background var(--dur-fast) var(--ease-silk), transform var(--dur-fast) var(--ease-silk);
+}
+
+.lightbox__nav:hover,
+.lightbox__nav:focus-visible {
+  background: var(--color-gold);
+  color: var(--color-maroon-deep);
+}
+
+.lightbox__nav--prev { left: clamp(0.5rem, 2vw, 1.5rem); }
+.lightbox__nav--next { right: clamp(0.5rem, 2vw, 1.5rem); }
+.lightbox__nav svg { width: 20px; height: 20px; }
+
+.lightbox__counter {
+  margin-top: var(--space-xs);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-gold-light);
+}

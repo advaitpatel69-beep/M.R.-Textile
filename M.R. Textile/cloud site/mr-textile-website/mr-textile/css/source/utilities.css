@@ -1,0 +1,227 @@
+/* ==========================================================================
+   UTILITIES — reusable helper classes
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+.section {
+  padding-block: var(--space-section);
+  position: relative;
+}
+
+.section--tight {
+  padding-block: var(--space-lg);
+}
+
+.section--dark {
+  background: linear-gradient(160deg, var(--color-maroon-deep), var(--color-burgundy) 70%);
+  color: var(--color-on-dark);
+}
+
+.section--dark h2,
+.section--dark h3,
+.section--dark h4 {
+  color: var(--color-on-dark);
+}
+
+.section--champagne {
+  background: var(--color-champagne-soft);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--color-gold);
+  display: block;
+}
+
+.section--dark .eyebrow,
+.section--dark .eyebrow::before {
+  color: var(--color-gold-light);
+  background: var(--color-gold-light);
+}
+
+.section-head {
+  max-width: 640px;
+  margin-bottom: var(--space-lg);
+}
+
+.section-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-head h2 {
+  font-size: var(--fs-h2);
+  margin-top: var(--space-xs);
+}
+
+.section-head p {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-body-lg);
+  color: var(--color-ink-soft);
+  line-height: var(--lh-loose);
+}
+
+.section--dark .section-head p {
+  color: var(--color-on-dark-soft);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.u-mt-sm { margin-top: var(--space-sm); }
+.u-mt-md { margin-top: var(--space-md); }
+.u-mt-lg { margin-top: var(--space-lg); }
+
+/* ---- Signature structural device: the zari border ----
+   A thin illustrated temple-motif strip, used as a section divider —
+   standing in for the woven gold border that runs along a saree's edge.
+   Implemented as a repeating background tile so the motif stays crisp
+   and evenly spaced at any viewport width. */
+.zari-divider {
+  width: 100%;
+  height: clamp(24px, 3.4vw, 40px);
+  display: block;
+  background-image: url("../icons/zari-pattern.svg");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 100%;
+  opacity: 0.9;
+}
+
+.zari-divider--dark {
+  background-image: url("../icons/zari-pattern-light.svg");
+}
+
+/* ---- Buttons ---- */
+.btn {
+  --btn-fg: var(--color-ivory);
+  --btn-bg: var(--color-maroon);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  padding: 1.05em 2.1em;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  border: 1px solid transparent;
+  transition: transform var(--dur-fast) var(--ease-silk),
+              box-shadow var(--dur-fast) var(--ease-silk),
+              background-color var(--dur-fast) var(--ease-silk);
+  white-space: nowrap;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--color-on-dark);
+  border-color: var(--color-border-dark);
+  backdrop-filter: blur(6px);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  background: rgba(246, 239, 227, 0.12);
+}
+
+.btn--outline {
+  --btn-bg: transparent;
+  --btn-fg: var(--color-maroon);
+  border-color: var(--color-maroon);
+}
+
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  background: var(--color-maroon);
+  --btn-fg: var(--color-ivory);
+}
+
+.btn--gold {
+  --btn-bg: var(--color-gold);
+  --btn-fg: var(--color-maroon-deep);
+}
+
+.btn--sm {
+  padding: 0.75em 1.5em;
+  font-size: var(--fs-eyebrow);
+}
+
+.btn--icon {
+  padding: 0.9em;
+  border-radius: 50%;
+}
+
+/* ---- Text link with animated gold underline ---- */
+.link-underline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: var(--fs-body-sm);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color-maroon);
+  padding-bottom: 0.3em;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: var(--color-gold);
+  transform: scaleX(0.35);
+  transform-origin: left;
+  transition: transform var(--dur-med) var(--ease-silk);
+}
+
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.section--dark .link-underline {
+  color: var(--color-on-dark);
+}

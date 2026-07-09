@@ -1,0 +1,100 @@
+/* ==========================================================================
+   FLOATING UI — WhatsApp, back-to-top, toasts
+   ========================================================================== */
+
+.floating-stack {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: var(--z-overlay);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.fab {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--dur-fast) var(--ease-silk), box-shadow var(--dur-fast) var(--ease-silk), opacity var(--dur-fast) var(--ease-silk), visibility var(--dur-fast) var(--ease-silk);
+}
+
+.fab:hover,
+.fab:focus-visible {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.fab--whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  position: relative;
+}
+
+.fab--whatsapp::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #25d366;
+  animation: whatsapp-pulse 2.4s var(--ease-silk) infinite;
+}
+
+.fab--whatsapp svg { width: 26px; height: 26px; }
+
+.fab--top {
+  background: var(--color-maroon);
+  color: var(--color-ivory);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+}
+
+.fab--top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.fab--top svg { width: 18px; height: 18px; }
+
+.toast-stack {
+  position: fixed;
+  top: var(--space-md);
+  right: var(--space-md);
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.toast {
+  background: var(--color-maroon-deep);
+  color: var(--color-on-dark);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-size: var(--fs-body-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  transform: translateX(120%);
+  transition: transform var(--dur-med) var(--ease-silk);
+  max-width: 320px;
+}
+
+.toast.is-visible {
+  transform: translateX(0);
+}
+
+.toast svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-gold-light);
+  flex-shrink: 0;
+}
