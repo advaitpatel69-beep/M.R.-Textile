@@ -837,6 +837,7 @@ noscript img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .hero__scrim {
@@ -1111,6 +1112,7 @@ noscript img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .about-visual__badge {
@@ -1376,6 +1378,7 @@ noscript img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   transform: scale(1);
   transition: transform var(--dur-slow) var(--ease-silk);
 }

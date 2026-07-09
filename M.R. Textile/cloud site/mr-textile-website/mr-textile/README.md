@@ -7,12 +7,10 @@ pricing anywhere on it, by design.
 
 ## Before you publish — please read
 
-This project was built without any product photography (no images were
-provided when the site was generated). Every image you see —
-hero backgrounds, the 10 collection cards, the 12 gallery close-ups, and the
-About/lifestyle photo — is an **elegant placeholder graphic**, not a real
-photo. They're organized so real photography drops in with zero layout
-changes. See "Replacing placeholder imagery" below.
+The site now uses provided saree photos from `images/sarees/` for the hero,
+About section, collection cards, gallery, lightbox, and social preview image.
+The older SVG placeholder artwork remains in the repo as fallback/reference
+assets, but it is no longer used by `index.html`.
 
 Three other things are placeholder/illustrative and should be reviewed before
 launch:
@@ -115,18 +113,19 @@ python3 -m http.server 8080
 # then open http://localhost:8080
 ```
 
-## Replacing placeholder imagery
+## Replacing imagery
 
-Drop in real photography using the same filenames (or update the `src`
-attributes in `index.html` to match new filenames) and the same aspect
-ratios so nothing in the layout shifts:
+Drop in updated photography using the same filenames (or update the `src`
+attributes in `index.html` to match new filenames). Similar portrait aspect
+ratios work best for the collection cards and gallery:
 
 | Folder                | Used for            | Recommended shape        |
 |------------------------|---------------------|---------------------------|
-| `images/hero/`         | Hero background slideshow | Landscape, 1920×1080 |
-| `images/collections/`  | The 10 category cards | Portrait, ~3:4 |
-| `images/gallery/`      | Masonry close-ups   | Mixed — keep a variety of portrait/landscape/square |
-| `images/lifestyle/`    | About section photo | Landscape, ~4:5 crop applied via CSS |
+| `images/sarees/degital-sarees/` | Digital/printed hero and gallery photos | Portrait, ~3:4 |
+| `images/sarees/designer-sarees/` | Designer and Banarasi-style cards/gallery | Portrait, ~3:4 |
+| `images/sarees/fancy-patern-sarees/` | Fancy, wedding and party-wear cards/gallery | Portrait, ~3:4 |
+| `images/sarees/printed-sarees/` | Printed and everyday/cotton cards/gallery | Portrait, ~3:4 |
+| `images/sarees/silk-sarees/` | Silk, traditional and About-section photos | Portrait, ~3:4 |
 
 Use real JPG/WEBP photography at these sizes (WEBP preferred for file size);
 `loading="lazy"` is already set on every non-hero image.
