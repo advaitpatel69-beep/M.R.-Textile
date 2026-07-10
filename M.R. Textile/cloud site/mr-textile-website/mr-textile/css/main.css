@@ -1104,6 +1104,15 @@ noscript img {
   aspect-ratio: 4/5;
 }
 
+@keyframes about-zoom-out {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .about-slide {
   position: absolute;
   inset: 0;
@@ -1112,15 +1121,14 @@ noscript img {
   object-fit: cover;
   object-position: center top;
   opacity: 0 !important;
-  transform: scale(1.04);
-  transition: opacity var(--dur-slow) var(--ease-silk), transform var(--dur-slow) var(--ease-silk);
+  transition: opacity 1.8s var(--ease-silk);
   z-index: 1;
 }
 
 .about-slide.is-active {
   opacity: 1 !important;
-  transform: scale(1);
   z-index: 2;
+  animation: about-zoom-out 6.8s ease-out forwards;
 }
 
 .about-visual__badge {
