@@ -18,6 +18,7 @@ import { initContactForm } from "./contact-form.js";
 import { initScrollProgress } from "./scroll-progress.js";
 import { initBackToTop } from "./back-to-top.js";
 import { initLazyImageFade } from "./lazy-images.js";
+import { initAboutSlider } from "./about-slider.js";
 
 function init() {
   initPreloader();
@@ -40,6 +41,9 @@ function init() {
   import("./products.js").then((module) => {
     module.initProducts(lightbox);
   });
+
+  // Initialize About slideshow
+  initAboutSlider();
 }
 
 if (document.readyState === "loading") {

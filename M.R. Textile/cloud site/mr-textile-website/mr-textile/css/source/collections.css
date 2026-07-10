@@ -144,6 +144,13 @@
   transition: opacity var(--dur-med) var(--ease-silk), transform var(--dur-med) var(--ease-silk);
 }
 
+.collection-card__cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
 .collection-card:hover .collection-card__cta,
 .collection-card:focus-within .collection-card__cta {
   opacity: 1;
