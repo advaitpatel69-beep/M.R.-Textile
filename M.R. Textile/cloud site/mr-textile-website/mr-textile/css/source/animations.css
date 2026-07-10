@@ -9,15 +9,29 @@
 [data-reveal] {
   opacity: 0;
   transition: opacity var(--dur-slow) var(--ease-silk),
-              transform var(--dur-slow) var(--ease-silk);
+    transform var(--dur-slow) var(--ease-silk);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
-[data-reveal="fade"] { transform: none; }
-[data-reveal="rise"] { transform: translateY(36px); }
-[data-reveal="scale"] { transform: scale(0.92); }
-[data-reveal="left"] { transform: translateX(-40px); }
-[data-reveal="right"] { transform: translateX(40px); }
+[data-reveal="fade"] {
+  transform: none;
+}
+
+[data-reveal="rise"] {
+  transform: translateY(36px);
+}
+
+[data-reveal="scale"] {
+  transform: scale(0.92);
+}
+
+[data-reveal="left"] {
+  transform: translateX(-40px);
+}
+
+[data-reveal="right"] {
+  transform: translateX(40px);
+}
 
 [data-reveal].is-revealed {
   opacity: 1;
@@ -34,38 +48,77 @@
 
 /* ---- Counters ---- */
 @keyframes pulse-soft {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.04); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
 }
 
 /* ---- Preloader ring draw ---- */
 @keyframes preloader-draw {
-  0% { stroke-dashoffset: 210; transform: rotate(0deg); }
-  50% { stroke-dashoffset: 40; transform: rotate(190deg); }
-  100% { stroke-dashoffset: 210; transform: rotate(360deg); }
+  0% {
+    stroke-dashoffset: 210;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    stroke-dashoffset: 40;
+    transform: rotate(190deg);
+  }
+
+  100% {
+    stroke-dashoffset: 210;
+    transform: rotate(360deg);
+  }
 }
 
 /* ---- Hero scroll cue drip ---- */
 @keyframes scroll-cue-drip {
-  0% { top: -100%; }
-  100% { top: 100%; }
+  0% {
+    top: -100%;
+  }
+
+  100% {
+    top: 100%;
+  }
 }
 
 /* ---- WhatsApp pulse ring ---- */
 @keyframes whatsapp-pulse {
-  0% { transform: scale(1); opacity: 0.7; }
-  100% { transform: scale(1.55); opacity: 0; }
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
 }
 
 /* ---- Spinner ---- */
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ---- Gentle float, used sparingly for ambient decoration ---- */
 @keyframes float-y {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .floaty {
@@ -74,14 +127,24 @@
 
 /* ---- Marquee (Why Choose Us / brand strip use, if needed) ---- */
 @keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* ---- Skeleton shimmer, e.g. while a lightbox image loads ---- */
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .is-shimmering {
