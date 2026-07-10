@@ -33,7 +33,7 @@ export function createLightbox() {
     imgEl.classList.remove("is-visible");
     // Swap after a beat so the fade-out/in reads as a transition, not a jump.
     window.setTimeout(() => {
-      captionEl.textContent = item.caption || "";
+      captionEl.innerHTML = item.caption || "";
       imgEl.onload = () => imgEl.classList.add("is-visible");
       imgEl.src = item.src;
       imgEl.alt = item.alt || "";

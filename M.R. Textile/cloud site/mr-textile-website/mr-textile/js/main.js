@@ -35,6 +35,11 @@ function init() {
   const lightbox = createLightbox();
   initGallery(lightbox);
   initCollections(lightbox);
+  
+  // Initialize dynamic subcategory product showcase
+  import("./products.js").then((module) => {
+    module.initProducts(lightbox);
+  });
 }
 
 if (document.readyState === "loading") {

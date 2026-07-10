@@ -1,0 +1,426 @@
+/* ==========================================================================
+   SUBCATEGORY STYLES — M.R. Textile / M.R. Sarees
+   --------------------------------------------------------------------------
+   Defines the presentation of the category pages: Parallax Hero, Product
+   Showcase Grid, Why Choose Us cards, FAQ Accordions, and CTAs.
+   ========================================================================== */
+
+/* ---- Category Hero Section ---- */
+.category-hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-on-dark);
+  text-align: center;
+  padding-block: var(--space-xl);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-hero {
+    background-attachment: scroll;
+  }
+}
+
+.category-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(36, 8, 15, 0.72) 0%, rgba(36, 8, 15, 0.5) 60%, rgba(36, 8, 15, 0.8) 100%);
+  z-index: 1;
+}
+
+.category-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding-inline: var(--container-pad);
+}
+
+.category-hero__breadcrumbs {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  margin-bottom: var(--space-sm);
+}
+
+.category-hero__breadcrumbs a {
+  color: var(--color-on-dark-soft);
+  transition: color var(--dur-fast) var(--ease-silk);
+}
+
+.category-hero__breadcrumbs a:hover {
+  color: var(--color-gold-light);
+}
+
+.category-hero__breadcrumbs span {
+  margin-inline: 0.5em;
+  opacity: 0.5;
+}
+
+.category-hero__title {
+  font-size: var(--fs-h1);
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--color-on-dark);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-xs);
+  text-transform: capitalize;
+}
+
+.category-hero__desc {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-normal);
+  color: var(--color-on-dark-soft);
+  max-width: 65ch;
+  margin-inline: auto;
+}
+
+/* ---- Category Introduction Section ---- */
+.category-intro {
+  text-align: center;
+  padding-bottom: 0;
+}
+
+.category-intro__content {
+  max-width: 840px;
+  margin-inline: auto;
+}
+
+.category-intro__headline {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  color: var(--color-maroon-deep);
+  margin-bottom: var(--space-sm);
+}
+
+.category-intro__body {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-loose);
+  color: var(--color-ink-soft);
+  margin-inline: auto;
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+/* ---- Card Grids (Generic Features & Advantages) ---- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  text-align: center;
+  transition: transform var(--dur-med) var(--ease-silk), box-shadow var(--dur-med) var(--ease-silk), border-color var(--dur-med) var(--ease-silk);
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gold-light);
+}
+
+.feature-card__icon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-gold);
+  margin-inline: auto;
+  margin-bottom: var(--space-sm);
+}
+
+.feature-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.feature-card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h5);
+  color: var(--color-maroon-deep);
+  margin-bottom: var(--space-2xs);
+}
+
+.feature-card__desc {
+  font-size: var(--fs-body-sm);
+  color: var(--color-ink-soft);
+  line-height: var(--lh-normal);
+  max-width: 100%;
+}
+
+/* ---- Product Showcase Grid ---- */
+.product-showcase {
+  background: var(--color-champagne-soft);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (max-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--dur-med) var(--ease-silk), box-shadow var(--dur-med) var(--ease-silk);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.product-card__img-container {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.product-card__img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-silk);
+}
+
+.product-card:hover .product-card__img-container img {
+  transform: scale(1.06);
+}
+
+.product-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(36, 8, 15, 0.45) 100%);
+  opacity: 0;
+  transition: opacity var(--dur-med) var(--ease-silk);
+}
+
+.product-card:hover .product-card__overlay {
+  opacity: 1;
+}
+
+.product-card__body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  color: var(--color-maroon-deep);
+  margin-bottom: var(--space-3xs);
+}
+
+.product-card__desc {
+  font-size: var(--fs-body-sm);
+  color: var(--color-ink-soft);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-sm);
+}
+
+.product-card__specs {
+  margin-top: auto;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  margin-bottom: var(--space-md);
+}
+
+.product-card__spec-item {
+  font-size: var(--fs-body-sm);
+  color: var(--color-ink);
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-card__spec-item strong {
+  font-weight: 500;
+  color: var(--color-maroon);
+}
+
+.product-card__spec-item span {
+  color: var(--color-ink-soft);
+  text-align: right;
+  max-width: 60%;
+}
+
+.product-card__btn {
+  width: 100%;
+}
+
+/* ---- Lightbox Rich Styling ---- */
+.lightbox__caption {
+  font-family: var(--font-display);
+  font-size: var(--fs-h5);
+  color: var(--color-on-dark);
+  line-height: var(--lh-tight);
+}
+
+.lightbox__caption strong {
+  color: var(--color-gold-light);
+  font-size: var(--fs-h4);
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+.lightbox__caption span {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--color-on-dark-soft);
+  display: block;
+  margin-top: 0.5em;
+}
+
+/* ---- Perfect For Section ---- */
+.perfect-for-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 1024px) {
+  .perfect-for-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .perfect-for-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.perfect-card {
+  background: var(--color-champagne-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.perfect-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-gold);
+}
+
+.perfect-card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h5);
+  color: var(--color-maroon-deep);
+  margin-bottom: var(--space-3xs);
+}
+
+.perfect-card__desc {
+  font-size: var(--fs-body-sm);
+  color: var(--color-ink-soft);
+  line-height: var(--lh-normal);
+}
+
+/* ---- Category Specific CTA Banner ---- */
+.category-cta {
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, var(--color-maroon-deep) 0%, var(--color-burgundy) 100%);
+  color: var(--color-on-dark);
+}
+
+.category-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../icons/zari-pattern-light.svg");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: auto 16px;
+  opacity: 0.15;
+}
+
+.category-cta__content {
+  max-width: 720px;
+  margin-inline: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.category-cta__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  color: var(--color-on-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.category-cta__desc {
+  font-size: var(--fs-body-lg);
+  color: var(--color-on-dark-soft);
+  line-height: var(--lh-normal);
+  margin-bottom: var(--space-lg);
+  margin-inline: auto;
+}
+
+.category-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+/* ---- FAQ Layout Specific Tweaks ---- */
+.category-faq {
+  background: var(--color-ivory);
+}
