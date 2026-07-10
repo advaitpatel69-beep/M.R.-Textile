@@ -29,15 +29,6 @@
   object-position: center top;
 }
 
-@keyframes about-zoom-out {
-  0% {
-    transform: scale(1.15);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 .about-slide {
   position: absolute;
   inset: 0;
@@ -46,14 +37,15 @@
   object-fit: cover;
   object-position: center top;
   opacity: 0 !important;
-  transition: opacity 1.8s var(--ease-silk);
+  transform: scale(1.15) !important;
+  transition: opacity 1.8s var(--ease-silk), transform 6.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
   z-index: 1;
 }
 
 .about-slide.is-active {
   opacity: 1 !important;
+  transform: scale(1) !important;
   z-index: 2;
-  animation: about-zoom-out 6.8s ease-out forwards;
 }
 
 .about-visual__badge {
