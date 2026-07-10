@@ -29,6 +29,25 @@
   object-position: center top;
 }
 
+.about-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0 !important;
+  transform: scale(1.04);
+  transition: opacity var(--dur-slow) var(--ease-silk), transform var(--dur-slow) var(--ease-silk);
+  z-index: 1;
+}
+
+.about-slide.is-active {
+  opacity: 1 !important;
+  transform: scale(1);
+  z-index: 2;
+}
+
 .about-visual__badge {
   position: absolute;
   bottom: clamp(-1.5rem, -2vw, -1rem);
@@ -41,6 +60,7 @@
   align-items: center;
   gap: var(--space-sm);
   max-width: 260px;
+  z-index: 10;
 }
 
 .about-visual__badge svg {
