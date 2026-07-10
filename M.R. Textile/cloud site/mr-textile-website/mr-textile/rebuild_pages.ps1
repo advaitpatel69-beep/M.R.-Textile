@@ -1,5 +1,5 @@
-$templateStart = Get-Content template_top.txt -Raw
-$templateEnd = Get-Content template_bottom.txt -Raw
+$templateStart = Get-Content template_top.txt -Raw -Encoding UTF8
+$templateEnd = Get-Content template_bottom.txt -Raw -Encoding UTF8
 
 # Fix navigation links to point back to index.html
 $templateStart = $templateStart -replace 'href="#', 'href="index.html#'

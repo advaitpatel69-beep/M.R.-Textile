@@ -5,7 +5,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#home" class="brand" aria-label="M.R. Textile â€” home">
+          <a href="#home" class="brand" aria-label="M.R. Textile — home">
             <span class="brand__mark">
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.6">
                 <circle cx="50" cy="50" r="46" stroke-opacity="0.5" />
@@ -14,7 +14,7 @@
             </span>
             <span class="brand__text">
               <span class="brand__word">M.R. Textile</span>
-              <span class="brand__tag">Saree Wholesalers Â· Surat</span>
+              <span class="brand__tag">Saree Wholesalers · Surat</span>
             </span>
           </a>
           <p class="footer-desc">A wholesale saree supplier based in Manish Market, Surat, serving retailers across India with ten curated categories of sarees.</p>
@@ -51,11 +51,11 @@
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>133, 1st Floor, Manish Market, Ring Road, Surat â€“ 395003, Gujarat</span>
+              <span>133, 1st Floor, Manish Market, Ring Road, Surat – 395003, Gujarat</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-              <span>Mon â€“ Sat, 10:00 AM â€“ 8:00 PM</span>
+              <span>Mon – Sat, 10:00 AM – 8:00 PM</span>
             </li>
           </ul>
         </div>
@@ -63,7 +63,7 @@
 
       <div class="footer-bottom">
         <p>&copy; <span id="year"></span> M.R. Textile / M.R. Sarees. All rights reserved.</p>
-        <p>Wholesale enquiries only Â· Not an online store</p>
+        <p>Wholesale enquiries only · Not an online store</p>
       </div>
     </div>
   </footer>

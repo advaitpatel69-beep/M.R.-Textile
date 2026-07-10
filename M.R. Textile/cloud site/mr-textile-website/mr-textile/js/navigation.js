@@ -16,8 +16,11 @@ export function initNavigation() {
 
   /* ---- Sticky header background ---- */
   const SCROLL_THRESHOLD = 24;
+  const isSolid = header.classList.contains("site-header--solid");
   const onScroll = () => {
-    header.classList.toggle("is-scrolled", window.scrollY > SCROLL_THRESHOLD);
+    if (!isSolid) {
+      header.classList.toggle("is-scrolled", window.scrollY > SCROLL_THRESHOLD);
+    }
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
