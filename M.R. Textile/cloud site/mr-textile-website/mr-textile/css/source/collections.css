@@ -47,6 +47,14 @@
   transition: box-shadow var(--dur-med) var(--ease-silk);
 }
 
+.collection-card__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
 .collection-card.is-hidden {
   display: none;
 }
@@ -142,13 +150,6 @@
   opacity: 0;
   transform: translateY(6px);
   transition: opacity var(--dur-med) var(--ease-silk), transform var(--dur-med) var(--ease-silk);
-}
-
-.collection-card__cta::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 3;
 }
 
 .collection-card:hover .collection-card__cta,
