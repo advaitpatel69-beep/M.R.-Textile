@@ -28,7 +28,7 @@ launch:
    inquiry to the business number. If you later add a backend endpoint or a
    form service, replace that submit handler.
 
-Also update the placeholder domain (`https://www.mrtextile.example/`) used
+Also update the placeholder domain (`https://www.mrtextile.html/`) used
 in the canonical tag, Open Graph tags, Twitter Card tags, `robots.txt` and
 `sitemap.xml` once you have a real domain.
 
