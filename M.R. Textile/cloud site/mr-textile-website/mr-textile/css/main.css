@@ -1102,6 +1102,8 @@ noscript img {
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   aspect-ratio: 4/5;
+  max-width: 88%;
+  margin-inline: auto;
 }
 
 .about-slide {
