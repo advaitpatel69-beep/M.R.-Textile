@@ -248,12 +248,16 @@ foreach ($cat in $categories) {
     $topContent = $topContent -replace '<title>.*</title>', "<title>$seoTitle</title>"
     # Replace Meta Description with correctly escaped quotes
     $topContent = $topContent -replace '<meta name="description" content="[^"]+" />', "<meta name=`"description`" content=`"$seoDesc`" />"
+    # Replace Canonical URL
+    $topContent = $topContent -replace '<link rel="canonical" href="[^"]+" />', "<link rel=`"canonical`" href=`"https://mrtextile.online/$id.html`" />"
+    # Replace Open Graph URL
+    $topContent = $topContent -replace '<meta property="og:url" content="[^"]+" />', "<meta property=`"og:url`" content=`"https://mrtextile.online/$id.html`" />"
     
     # Inject Custom Breadcrumb & Product Schema before </head>
     $breadcrumbItems = @(
-        '{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.mrtextile.html/"}',
-        '{"@type": "ListItem", "position": 2, "name": "Collections", "item": "https://www.mrtextile.html/#collections"}',
-        '{"@type": "ListItem", "position": 3, "name": "'+$title+'", "item": "https://www.mrtextile.html/'+$id+'.html"}'
+        '{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mrtextile.online/"}',
+        '{"@type": "ListItem", "position": 2, "name": "Collections", "item": "https://mrtextile.online/#collections"}',
+        '{"@type": "ListItem", "position": 3, "name": "'+$title+'", "item": "https://mrtextile.online/'+$id+'.html"}'
     )
     $breadcrumbSchema = '{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [' + ($breadcrumbItems -join ', ') + ']}'
     

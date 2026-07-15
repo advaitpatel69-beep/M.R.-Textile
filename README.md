@@ -1,4 +1,4 @@
-# M.R. Textile / M.R. Sarees — Marketing Website
+﻿# M.R. Textile / M.R. Sarees — Marketing Website
 
 A static, framework-free marketing site (HTML5 + CSS3 + vanilla ES6+ JS) for
 M.R. Textile, a saree wholesaler in Surat, Gujarat. This is a **branding and
@@ -28,7 +28,7 @@ launch:
    inquiry to the business number. If you later add a backend endpoint or a
    form service, replace that submit handler.
 
-Also update the placeholder domain (`https://www.mrtextile.html/`) used
+Also update the placeholder domain (`https://mrtextile.online/`) used
 in the canonical tag, Open Graph tags, Twitter Card tags, `robots.txt` and
 `sitemap.xml` once you have a real domain.
 
