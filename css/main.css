@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    DESIGN TOKENS — M.R. Textile / M.R. Sarees
    --------------------------------------------------------------------------
    Palette is drawn from the material itself: ivory tussar, champagne silk,
@@ -568,6 +568,20 @@ noscript img {
 .preloader__mark svg {
   width: 100%;
   height: 100%;
+}
+
+.preloader__logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+  animation: preloader-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes preloader-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
 }
 
 .preloader__ring {
