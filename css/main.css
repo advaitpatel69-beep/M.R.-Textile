@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    DESIGN TOKENS — M.R. Textile / M.R. Sarees
    --------------------------------------------------------------------------
    Palette is drawn from the material itself: ivory tussar, champagne silk,
@@ -1034,7 +1034,18 @@ noscript img {
   transform: translateY(-3px);
 }
 
-.footer-social svg { width: 16px; height: 16px; }
+.footer-social svg { width: 22px; height: 22px; }
+/* Official WhatsApp icon has its own circle – remove the border wrapper */
+.footer-social a[aria-label*="WhatsApp"] {
+  border: none;
+  background: transparent;
+  padding: 2px;
+}
+.footer-social a[aria-label*="WhatsApp"]:hover,
+.footer-social a[aria-label*="WhatsApp"]:focus-visible {
+  background: transparent;
+  transform: translateY(-3px) scale(1.12);
+}
 
 .footer-col h6 {
   font-family: var(--font-body);
@@ -2233,9 +2244,11 @@ noscript img {
 }
 
 .fab--whatsapp {
-  background: #25d366;
-  color: #ffffff;
+  /* Background removed — official WhatsApp SVG icon includes its own green circle */
+  background: transparent;
+  color: transparent;
   position: relative;
+  box-shadow: none;
 }
 
 .fab--whatsapp::after {
@@ -2247,7 +2260,7 @@ noscript img {
   animation: whatsapp-pulse 2.4s var(--ease-silk) infinite;
 }
 
-.fab--whatsapp svg { width: 26px; height: 26px; }
+.fab--whatsapp svg { width: 52px; height: 52px; }
 
 .fab--top {
   background: var(--color-maroon);
