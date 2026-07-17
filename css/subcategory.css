@@ -5,6 +5,10 @@
    Showcase Grid, Why Choose Us cards, FAQ Accordions, and CTAs.
    ========================================================================== */
 
+/* Mobile horizontal overflow guard (category pages) */
+html, body { overflow-x: hidden; max-width: 100%; }
+section, .container, .site-header, .site-footer { max-width: 100%; }
+
 /* ---- Category Hero Section ---- */
 .category-hero {
   position: relative;

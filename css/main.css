@@ -130,6 +130,9 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  /* Prevent any child element from creating horizontal scroll on mobile */
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -160,6 +163,18 @@ body {
 
 body.no-scroll {
   overflow: hidden;
+}
+
+/* Global horizontal overflow guard:
+   Any element wider than the viewport will be clipped.
+   This prevents hero sections, grids, or transforms from
+   causing the right-side white-space gap on mobile. */
+.site-header,
+.site-footer,
+section,
+main,
+.container {
+  max-width: 100%;
 }
 
 /* Offsets in-page anchor jumps (including direct #hash URLs) so content
@@ -2224,6 +2239,9 @@ noscript img {
   flex-direction: column;
   align-items: center;
   gap: var(--space-xs);
+  /* Prevent pulse ring animation from triggering horizontal scroll */
+  overflow: visible;
+  isolation: isolate;
 }
 
 .fab {
@@ -2260,7 +2278,7 @@ noscript img {
   animation: whatsapp-pulse 2.4s var(--ease-silk) infinite;
 }
 
-.fab--whatsapp svg { width: 52px; height: 52px; }
+.fab--whatsapp svg { width: 44px; height: 44px; }
 
 .fab--top {
   background: var(--color-maroon);
