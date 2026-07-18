@@ -57,9 +57,11 @@
   display: block;
 }
 
-.section--dark .eyebrow,
-.section--dark .eyebrow::before {
+.section--dark .eyebrow {
   color: var(--color-gold-light);
+}
+
+.section--dark .eyebrow::before {
   background: var(--color-gold-light);
 }
 

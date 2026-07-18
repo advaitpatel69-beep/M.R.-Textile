@@ -491,7 +491,7 @@
   color: var(--color-on-dark);
 }
 
-.cp-cta__content p:not(.eyebrow) {
+.cp-cta__content p {
   margin-top: var(--space-sm);
   color: var(--color-on-dark-soft);
   font-size: var(--fs-body-lg);
