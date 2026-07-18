@@ -497,6 +497,22 @@
 
 .footer-social svg { width: 16px; height: 16px; }
 
+/* Official WhatsApp icon has its own circle – remove the border wrapper */
+.footer-social a[aria-label*="WhatsApp"] {
+  border: none;
+  background: transparent;
+  padding: 2px;
+}
+.footer-social a[aria-label*="WhatsApp"] svg {
+  width: 32px;
+  height: 32px;
+}
+.footer-social a[aria-label*="WhatsApp"]:hover,
+.footer-social a[aria-label*="WhatsApp"]:focus-visible {
+  background: transparent;
+  transform: translateY(-3px) scale(1.12);
+}
+
 .footer-col h6 {
   font-family: var(--font-body);
   font-size: var(--fs-eyebrow);

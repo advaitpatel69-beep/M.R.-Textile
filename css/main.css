@@ -1058,6 +1058,10 @@ noscript img {
   background: transparent;
   padding: 2px;
 }
+.footer-social a[aria-label*="WhatsApp"] svg {
+  width: 32px;
+  height: 32px;
+}
 .footer-social a[aria-label*="WhatsApp"]:hover,
 .footer-social a[aria-label*="WhatsApp"]:focus-visible {
   background: transparent;
