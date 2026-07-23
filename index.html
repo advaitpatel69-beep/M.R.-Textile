@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-IN">
 
 <head>
@@ -78,9 +78,10 @@
   </script>
 
   <!-- Trackers -->
-  <script src="/Tools/clarity.js"></script>
+  <script defer src="/Tools/clarity.js"></script>
 
   <link rel="preload" href="mr-textile-logo-detailed.png" as="image" />
+  <link rel="preload" href="images/sarees/degital-sarees/saree_1.jpeg" as="image" fetchpriority="high" />
 </head>
 
 <body>
@@ -88,7 +89,7 @@
   <!-- PRELOADER: uses detailed mandala logo (high detail visible at large size) -->
   <div class="preloader" role="status" aria-live="polite">
     <div class="preloader__mark">
-      <img src="mr-textile-logo-detailed.png" alt="M.R. Textile" class="preloader__logo" />
+      <img src="mr-textile-logo-detailed.png" alt="M.R. Textile" class="preloader__logo" width="120" height="120" />
     </div>
     <p class="preloader__text">M.R. Textile</p>
   </div>
@@ -163,10 +164,10 @@
     <!-- ============================== HERO ============================== -->
     <section class="hero" id="home">
       <div class="hero__slides" aria-hidden="true">
-        <div class="hero__slide is-active"><img src="images/sarees/degital-sarees/saree_1.jpeg" alt="Digital saree in hero section" /></div>
-        <div class="hero__slide"><img src="images/sarees/brasso-sarees/saree_1.jpeg" alt="Brasso saree in hero section" /></div>
-        <div class="hero__slide"><img src="images/sarees/partywear/saree_1.jpeg" alt="Fancy pattern saree in hero section" /></div>
-        <div class="hero__slide"><img src="images/sarees/silk-sarees/saree_1.jpeg" alt="Silk saree in hero section" /></div>
+        <div class="hero__slide is-active"><img src="images/sarees/degital-sarees/saree_1.jpeg" alt="Digital saree in hero section" width="1920" height="1080" fetchpriority="high" /></div>
+        <div class="hero__slide"><img src="images/sarees/brasso-sarees/saree_1.jpeg" alt="Brasso saree in hero section" width="1920" height="1080" loading="lazy" /></div>
+        <div class="hero__slide"><img src="images/sarees/partywear/saree_1.jpeg" alt="Fancy pattern saree in hero section" width="1920" height="1080" loading="lazy" /></div>
+        <div class="hero__slide"><img src="images/sarees/silk-sarees/saree_1.jpeg" alt="Silk saree in hero section" width="1920" height="1080" loading="lazy" /></div>
       </div>
       <div class="hero__scrim" aria-hidden="true"></div>
 
