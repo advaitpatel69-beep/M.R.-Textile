@@ -2430,6 +2430,31 @@ noscript img {
 }
 
 /* ---- WhatsApp pulse ring ---- */
+
+/* ---- Version Bar for B2B / Premium Switching ---- */
+.version-bar {
+  background: #3d0a14;
+  color: #f6efe3;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-family: var(--font-body, 'Jost', sans-serif);
+  border-bottom: 1px solid rgba(207, 168, 110, 0.3);
+  position: relative;
+  z-index: 1001;
+}
+
+.version-bar a {
+  color: #cfa86e;
+  font-weight: 500;
+  text-decoration: underline;
+  margin-left: 6px;
+  transition: color 0.2s ease;
+}
+
+.version-bar a:hover {
+  color: #ffffff;
+}
 @keyframes whatsapp-pulse {
   0% {
     transform: scale(1);

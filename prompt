@@ -1,0 +1,477 @@
+                        ┌─────────────────────────────┐
+                        │       Desktop CMS           │
+                        │     (Electron + Node.js)    │
+                        └──────────────┬──────────────┘
+                                       │
+                         CRUD Operations │
+                                       ▼
+                        ┌─────────────────────────────┐
+                        │      SQLite Database        │
+                        │  Products, Categories, SEO  │
+                        │  Homepage, Settings, Media  │
+                        └──────────────┬──────────────┘
+                                       │
+                          Read Content │
+                                       ▼
+                     ┌──────────────────────────────┐
+                     │     Static Site Generator    │
+                     │                              │
+                     │ • HTML Templates             │
+                     │ • JSON Generator             │
+                     │ • Sitemap Generator          │
+                     │ • Search Index Generator     │
+                     │ • Schema Generator           │
+                     │ • Image Optimizer            │
+                     └──────────────┬───────────────┘
+                                    │
+                           Generate Website
+                                    ▼
+                 ┌───────────────────────────────────┐
+                 │      Static Website Files         │
+                 │                                   │
+                 │ index.html                        │
+                 │ category pages                    │
+                 │ products.json                     │
+                 │ sitemap.xml                       │
+                 │ optimized images                  │
+                 └──────────────┬────────────────────┘
+                                │
+                          Git Automation
+                                ▼
+                 git add → git commit → git push
+                                │
+                                ▼
+                        GitHub Repository
+                                │
+                                ▼
+                         GitHub Pages Website
+
+
+
+                         MR-Textile-CMS/
+
+│
+├── app/
+│   ├── ui/
+│   ├── windows/
+│   ├── components/
+│   ├── dialogs/
+│   └── styles/
+│
+├── backend/
+│   ├── database/
+│   ├── services/
+│   ├── generators/
+│   ├── git/
+│   ├── images/
+│   ├── seo/
+│   ├── validation/
+│   └── backup/
+│
+├── templates/
+│   ├── homepage/
+│   ├── category/
+│   ├── product/
+│   ├── gallery/
+│   ├── contact/
+│   └── partials/
+│
+├── database/
+│   └── database.db
+│
+├── generated-site/
+│
+├── backups/
+│
+├── logs/
+│
+├── config/
+│
+└── electron/
+
+
+
+
+Database Design
+
+Instead of a single products table, normalize the data.
+
+Products
+id
+name
+slug
+description
+category_id
+featured
+status
+created_at
+updated_at
+seo_id
+
+
+Categories
+
+id
+name
+slug
+hero_image
+description
+display_order
+homepage_visible
+seo_id
+
+Images
+
+id
+product_id
+filename
+type
+display_order
+alt_text
+
+Type:
+
+main
+variant
+gallery
+hero
+banner
+
+
+SEO
+
+id
+title
+description
+keywords
+canonical
+schema
+og_title
+og_description
+
+
+Homepage
+
+hero_title
+hero_description
+hero_image
+featured_products
+featured_categories
+
+
+Business Information
+
+business_name
+address
+phone
+email
+gst
+whatsapp
+opening_hours
+google_maps
+
+
+Settings
+
+theme
+compression_quality
+image_format
+website_url
+github_repo
+
+
+CMS Modules
+
+Instead of only the modules we discussed, Id organize them like this:
+
+Dashboard
+
+Products
+
+Categories
+
+Collections
+
+Gallery
+
+Media Library
+
+Homepage Builder
+
+SEO
+
+Business Details
+
+Stock Manager
+
+Image Optimizer
+
+Website Generator
+
+Deployment
+
+Backups
+
+Logs
+
+Settings
+Smart Automation
+
+This is where the CMS becomes powerful.
+
+Every time a product is added:
+
+Upload Images
+
+↓
+
+Compress Images
+
+↓
+
+Generate WebP
+
+↓
+
+Generate AVIF
+
+↓
+
+Create Thumbnail
+
+↓
+
+Create Mobile Version
+
+↓
+
+Generate Alt Text
+
+↓
+
+Generate Slug
+
+↓
+
+Generate SEO Title
+
+↓
+
+Update Database
+
+↓
+
+Update Search Index
+
+The administrator should never have to think about these steps.
+
+Publish Workflow
+
+Instead of only:
+
+Publish Website
+
+Id use a pipeline.
+
+Step 1
+
+Validate Database
+
+↓
+
+Step 2
+
+Validate Images
+
+↓
+
+Step 3
+
+Optimize Images
+
+↓
+
+Step 4
+
+Generate JSON
+
+↓
+
+Step 5
+
+Generate HTML
+
+↓
+
+Step 6
+
+Generate Sitemap
+
+↓
+
+Step 7
+
+Generate Schema
+
+↓
+
+Step 8
+
+Generate Search Index
+
+↓
+
+Step 9
+
+Verify Internal Links
+
+↓
+
+Step 10
+
+Preview Changes
+
+↓
+
+Step 11
+
+Git Commit
+
+↓
+
+Step 12
+
+Git Push
+
+↓
+
+Finished
+
+If any step fails, stop the process and display a clear error.
+
+Logging
+
+Every action should be recorded.
+
+10:21 AM
+
+Product Added
+
+Royal Silk 105
+
+--------------------
+
+10:23 AM
+
+Gallery Updated
+
+--------------------
+
+10:24 AM
+
+Website Published
+
+Commit:
+Added Royal Silk Collection
+
+This makes debugging much easier.
+
+Recovery
+
+Every publish should automatically create a restore point.
+
+Publish
+
+↓
+
+Backup
+
+↓
+
+Generate
+
+↓
+
+Deploy
+
+If something goes wrong:
+
+Restore Previous Version
+
+↓
+
+Done
+
+One click.
+
+Image Management
+
+This deserves its own subsystem.
+
+Media Library
+
+↓
+
+Drag Images
+
+↓
+
+AI detects category
+
+↓
+
+AI groups variants
+
+↓
+
+Duplicate detection
+
+↓
+
+Unused image detection
+
+↓
+
+Compression
+
+↓
+
+Generate WebP
+
+↓
+
+Store metadata
+
+No manual organization.
+
+
+
+Build the project incrementally. Do not generate the entire application in one response. Start by creating the complete folder structure, package.json, and application architecture. Then implement one module at a time (authentication, database, products, categories, media library, static site generator, Git integration, etc.). Each module must be complete, tested, and integrated before moving to the next. Provide clear setup instructions and commands whenever new dependencies are introduced.
+
+Phase 1
+Project architecture
+Folder structure
+package.json
+Electron setup
+SQLite setup
+Login screen
+Dashboard
+Phase 2
+Product management
+Category management
+Media library
+Phase 3
+Homepage manager
+SEO manager
+Business information
+Phase 4
+Static site generator
+HTML templates
+JSON generator
+Sitemap generator
+Phase 5
+Git integration
+Backup system
+Auto-publish
+Logging
+Testing
