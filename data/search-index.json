@@ -8,6 +8,14 @@
     "slug": "silk-sarees"
   },
   {
+    "id": 16,
+    "name": "Malai",
+    "category": "Printed Sarees",
+    "desc": "Fancy Print, Sirosgi Work, 6-30 cut",
+    "image": "images/sarees/printed-sarees/saree_102.jpg",
+    "slug": "printed-sarees"
+  },
+  {
     "id": 15,
     "name": "Siyaa",
     "category": "Brasso Sarees",

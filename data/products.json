@@ -11,6 +11,17 @@
     "variants": []
   },
   {
+    "id": 16,
+    "code": "saree_102",
+    "name": "Malai",
+    "category": "printed-sarees",
+    "description": "Fancy Print, Sirosgi Work, 6-30 cut",
+    "status": "active",
+    "featured": true,
+    "mainImage": "images/sarees/printed-sarees/saree_102.jpg",
+    "variants": []
+  },
+  {
     "id": 15,
     "code": "saree_101",
     "name": "Siyaa",
