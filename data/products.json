@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "code": "saree_1",
+    "name": "Silk #1",
+    "category": "silk-sarees",
+    "description": "High-quality Silk Sarees wholesale saree with beautiful finish.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/silk-sarees/saree_1.jpeg",
+    "variants": []
+  },
+  {
+    "id": 15,
+    "code": "saree_101",
+    "name": "Siyaa",
+    "category": "brasso-sarees",
+    "description": "Fancy Brasso, Heavy Sirosgi Work, 6-30 cut",
+    "status": "active",
+    "featured": true,
+    "mainImage": "images/sarees/brasso-sarees/saree_101.jpg",
+    "variants": []
+  },
+  {
+    "id": 2,
+    "code": "saree_2",
+    "name": "Silk #2",
+    "category": "silk-sarees",
+    "description": "High-quality Silk Sarees wholesale saree with beautiful finish.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/silk-sarees/saree_2.jpeg",
+    "variants": []
+  },
+  {
+    "id": 3,
+    "code": "saree_3",
+    "name": "Silk #3",
+    "category": "silk-sarees",
+    "description": "High-quality Silk Sarees wholesale saree with beautiful finish.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/silk-sarees/saree_3.jpeg",
+    "variants": []
+  },
+  {
+    "id": 4,
+    "code": "saree_4",
+    "name": "Silk #4",
+    "category": "silk-sarees",
+    "description": "High-quality Silk Sarees wholesale saree with beautiful finish.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/silk-sarees/saree_4.jpeg",
+    "variants": []
+  },
+  {
+    "id": 5,
+    "code": "saree_5",
+    "name": "Silk #5",
+    "category": "silk-sarees",
+    "description": "High-quality Silk Sarees wholesale saree with beautiful finish.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/silk-sarees/saree_5.jpeg",
+    "variants": []
+  },
+  {
+    "id": 6,
+    "code": "saree_6",
+    "name": "Silk #6",
+    "category": "silk-sarees",
+    "description": "High-quality Silk Sarees wholesale saree with beautiful finish.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/silk-sarees/saree_6.jpeg",
+    "variants": []
+  },
+  {
+    "id": 7,
+    "code": "saree_7",
+    "name": "Silk #7",
+    "category": "silk-sarees",
+    "description": "High-quality Silk Sarees wholesale saree with beautiful finish.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/silk-sarees/saree_7.jpeg",
+    "variants": []
+  },
+  {
+    "id": 8,
+    "code": "saree_8",
+    "name": "Silk #8",
+    "category": "silk-sarees",
+    "description": "High-quality Silk Sarees wholesale saree with beautiful finish.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/silk-sarees/saree_8.jpeg",
+    "variants": []
+  },
+  {
+    "id": 9,
+    "code": "saree_10",
+    "name": "Printed #10",
+    "category": "printed-sarees",
+    "description": "High-quality Printed Sarees wholesale saree with beautiful finish.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/printed-sarees/saree_10.jpeg",
+    "variants": []
+  },
+  {
+    "id": 10,
+    "code": "saree_11",
+    "name": "Printed #11",
+    "category": "printed-sarees",
+    "description": "High-quality Printed Sarees wholesale saree with beautiful finish.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/printed-sarees/saree_11.jpeg",
+    "variants": []
+  },
+  {
+    "id": 11,
+    "code": "saree_12",
+    "name": "Printed #12",
+    "category": "printed-sarees",
+    "description": "High-quality Printed Sarees wholesale saree with beautiful finish.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/printed-sarees/saree_12.jpeg",
+    "variants": []
+  },
+  {
+    "id": 12,
+    "code": "saree_13",
+    "name": "Printed #13",
+    "category": "printed-sarees",
+    "description": "High-quality Printed Sarees wholesale saree with beautiful finish.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/printed-sarees/saree_13.jpeg",
+    "variants": []
+  },
+  {
+    "id": 13,
+    "code": "saree_14",
+    "name": "Printed #14",
+    "category": "printed-sarees",
+    "description": "High-quality Printed Sarees wholesale saree with beautiful finish.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/printed-sarees/saree_14.jpeg",
+    "variants": []
+  },
+  {
+    "id": 14,
+    "code": "saree_9",
+    "name": "Printed #9",
+    "category": "printed-sarees",
+    "description": "High-quality Printed Sarees wholesale saree with beautiful finish.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/printed-sarees/saree_9.jpeg",
+    "variants": []
+  }
+]

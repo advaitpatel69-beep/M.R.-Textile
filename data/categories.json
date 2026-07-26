@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "slug": "silk-sarees",
+    "name": "Silk Sarees",
+    "htmlFile": "silk.html",
+    "heroImage": "images/sarees/silk-sarees/saree_1.jpeg",
+    "description": "Premium wholesale silk sarees from Surat",
+    "displayOrder": 1,
+    "homepageVisible": true,
+    "productCount": 8
+  },
+  {
+    "id": 2,
+    "slug": "digital-sarees",
+    "name": "Digital Sarees",
+    "htmlFile": "digital.html",
+    "heroImage": "images/sarees/degital-sarees/saree_1.jpeg",
+    "description": "Digital printed sarees wholesale",
+    "displayOrder": 2,
+    "homepageVisible": true,
+    "productCount": 0
+  },
+  {
+    "id": 3,
+    "slug": "brasso-sarees",
+    "name": "Brasso Sarees",
+    "htmlFile": "brasso.html",
+    "heroImage": "images/sarees/brasso-sarees/saree_1.jpeg",
+    "description": "Wholesale brasso sarees Surat",
+    "displayOrder": 3,
+    "homepageVisible": true,
+    "productCount": 1
+  },
+  {
+    "id": 4,
+    "slug": "wedding-sarees",
+    "name": "Wedding Sarees",
+    "htmlFile": "wedding.html",
+    "heroImage": "images/sarees/wedding-sarees/saree_1.jpeg",
+    "description": "Wholesale wedding sarees for retailers",
+    "displayOrder": 4,
+    "homepageVisible": true,
+    "productCount": 0
+  },
+  {
+    "id": 5,
+    "slug": "printed-sarees",
+    "name": "Printed Sarees",
+    "htmlFile": "printed.html",
+    "heroImage": "images/sarees/printed-sarees/saree_1.jpeg",
+    "description": "Printed sarees wholesale Surat",
+    "displayOrder": 5,
+    "homepageVisible": true,
+    "productCount": 6
+  },
+  {
+    "id": 6,
+    "slug": "party-wear",
+    "name": "Party Wear Sarees",
+    "htmlFile": "party-wear.html",
+    "heroImage": "images/sarees/partywear/saree_1.jpeg",
+    "description": "Party wear sarees wholesale",
+    "displayOrder": 6,
+    "homepageVisible": true,
+    "productCount": 0
+  },
+  {
+    "id": 7,
+    "slug": "fancy-sarees",
+    "name": "Fancy Sarees",
+    "htmlFile": "fancy.html",
+    "heroImage": "images/sarees/fancy-patern-sarees/saree_1.jpeg",
+    "description": "Fancy pattern sarees wholesale",
+    "displayOrder": 7,
+    "homepageVisible": true,
+    "productCount": 0
+  },
+  {
+    "id": 8,
+    "slug": "embroidery-sarees",
+    "name": "Embroidery Sarees",
+    "htmlFile": "embroidery.html",
+    "heroImage": "images/sarees/embroidery-sarees/saree_1.jpeg",
+    "description": "Embroidery sarees wholesale Surat",
+    "displayOrder": 8,
+    "homepageVisible": true,
+    "productCount": 0
+  }
+]
