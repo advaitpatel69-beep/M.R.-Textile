@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Silk #1",
+    "name": "Mohabbat",
     "category": "Silk Sarees",
     "desc": "High-quality Silk Sarees wholesale saree with beautiful finish.",
     "image": "images/sarees/silk-sarees/saree_1.jpeg",
@@ -25,17 +25,17 @@
   },
   {
     "id": 2,
-    "name": "Silk #2",
+    "name": "Mohabbat",
     "category": "Silk Sarees",
-    "desc": "High-quality Silk Sarees wholesale saree with beautiful finish.",
+    "desc": "High-quality Silk Sarees wholesale saree with beautiful finish.\n# Different Design",
     "image": "images/sarees/silk-sarees/saree_2.jpeg",
     "slug": "silk-sarees"
   },
   {
     "id": 3,
-    "name": "Silk #3",
+    "name": "Mohabbat",
     "category": "Silk Sarees",
-    "desc": "High-quality Silk Sarees wholesale saree with beautiful finish.",
+    "desc": "High-quality Silk Sarees wholesale saree with beautiful finish.\n# Different Design",
     "image": "images/sarees/silk-sarees/saree_3.jpeg",
     "slug": "silk-sarees"
   },
@@ -49,15 +49,15 @@
   },
   {
     "id": 5,
-    "name": "Silk #5",
+    "name": "Mohabbat",
     "category": "Silk Sarees",
-    "desc": "High-quality Silk Sarees wholesale saree with beautiful finish.",
+    "desc": "High-quality Silk Sarees wholesale saree with beautiful finish.\n# Different Design",
     "image": "images/sarees/silk-sarees/saree_5.jpeg",
     "slug": "silk-sarees"
   },
   {
     "id": 6,
-    "name": "Silk #6",
+    "name": "Candy",
     "category": "Silk Sarees",
     "desc": "High-quality Silk Sarees wholesale saree with beautiful finish.",
     "image": "images/sarees/silk-sarees/saree_6.jpeg",
@@ -65,17 +65,17 @@
   },
   {
     "id": 7,
-    "name": "Silk #7",
+    "name": "Mohabbat",
     "category": "Silk Sarees",
-    "desc": "High-quality Silk Sarees wholesale saree with beautiful finish.",
+    "desc": "High-quality Silk Sarees wholesale saree with beautiful finish.\n# Different Design",
     "image": "images/sarees/silk-sarees/saree_7.jpeg",
     "slug": "silk-sarees"
   },
   {
     "id": 8,
-    "name": "Silk #8",
+    "name": "Mohabbat",
     "category": "Silk Sarees",
-    "desc": "High-quality Silk Sarees wholesale saree with beautiful finish.",
+    "desc": "High-quality Silk Sarees wholesale saree with beautiful finish.\n# Different Design",
     "image": "images/sarees/silk-sarees/saree_8.jpeg",
     "slug": "silk-sarees"
   },
@@ -89,7 +89,7 @@
   },
   {
     "id": 10,
-    "name": "Printed #11",
+    "name": "Raga Diamond",
     "category": "Printed Sarees",
     "desc": "High-quality Printed Sarees wholesale saree with beautiful finish.",
     "image": "images/sarees/printed-sarees/saree_11.jpeg",
@@ -97,15 +97,15 @@
   },
   {
     "id": 11,
-    "name": "Printed #12",
+    "name": "Limca",
     "category": "Printed Sarees",
-    "desc": "High-quality Printed Sarees wholesale saree with beautiful finish.",
+    "desc": "High-quality Printed Sarees wholesale saree with beautiful finish.\n# Different Design",
     "image": "images/sarees/printed-sarees/saree_12.jpeg",
     "slug": "printed-sarees"
   },
   {
     "id": 12,
-    "name": "Printed #13",
+    "name": "Lenovo",
     "category": "Printed Sarees",
     "desc": "High-quality Printed Sarees wholesale saree with beautiful finish.",
     "image": "images/sarees/printed-sarees/saree_13.jpeg",
@@ -113,7 +113,7 @@
   },
   {
     "id": 13,
-    "name": "Printed #14",
+    "name": "Limca",
     "category": "Printed Sarees",
     "desc": "High-quality Printed Sarees wholesale saree with beautiful finish.",
     "image": "images/sarees/printed-sarees/saree_14.jpeg",
@@ -121,7 +121,7 @@
   },
   {
     "id": 14,
-    "name": "Printed #9",
+    "name": "Aasman",
     "category": "Printed Sarees",
     "desc": "High-quality Printed Sarees wholesale saree with beautiful finish.",
     "image": "images/sarees/printed-sarees/saree_9.jpeg",
