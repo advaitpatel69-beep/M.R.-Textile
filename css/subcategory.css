@@ -12,17 +12,20 @@ section, .container, .site-header, .site-footer { max-width: 100%; }
 /* ---- Category Hero Section ---- */
 .category-hero {
   position: relative;
-  min-height: 480px;
+  min-height: clamp(550px, 75vh, 900px);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-on-dark);
   text-align: center;
   padding-block: var(--space-xl);
+  padding-top: calc(var(--space-xl) + 120px);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   overflow: hidden;
+  /* Pull up to cancel main's padding-top so hero is flush under the header */
+  margin-top: -120px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -91,7 +94,7 @@ section, .container, .site-header, .site-footer { max-width: 100%; }
 /* ---- Category Introduction Section ---- */
 .category-intro {
   text-align: center;
-  padding-bottom: 0;
+  padding-block: var(--space-lg);
 }
 
 .category-intro__content {
