@@ -19,6 +19,7 @@ import { initScrollProgress } from "./scroll-progress.js";
 import { initBackToTop } from "./back-to-top.js";
 import { initLazyImageFade } from "./lazy-images.js";
 import { initAboutSlider } from "./about-slider.js";
+import { initWhatsAppGate } from "./whatsapp-gate.js";
 
 function init() {
   initPreloader();
@@ -33,6 +34,7 @@ function init() {
   initScrollProgress();
   initBackToTop();
   initLazyImageFade();
+  initWhatsAppGate();
 
   const lightbox = createLightbox();
   initGallery(lightbox);

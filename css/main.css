@@ -1034,8 +1034,8 @@ noscript img {
 }
 
 .footer-social a {
-  width: 38px;
-  height: 38px;
+  width: 46px;
+  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1051,7 +1051,7 @@ noscript img {
   transform: translateY(-3px);
 }
 
-.footer-social svg { width: 22px; height: 22px; }
+.footer-social svg { width: 28px; height: 28px; }
 /* Official WhatsApp icon has its own circle – remove the border wrapper */
 .footer-social a[aria-label*="WhatsApp"] {
   border: none;
@@ -1059,8 +1059,23 @@ noscript img {
   padding: 2px;
 }
 .footer-social a[aria-label*="WhatsApp"] svg {
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
+}
+/* Official Instagram icon has its own gradient background – remove the border wrapper */
+.footer-social a[aria-label*="Instagram"] {
+  border: none;
+  background: transparent;
+  padding: 2px;
+}
+.footer-social a[aria-label*="Instagram"] svg {
+  width: 38px;
+  height: 38px;
+}
+.footer-social a[aria-label*="Instagram"]:hover,
+.footer-social a[aria-label*="Instagram"]:focus-visible {
+  background: transparent;
+  transform: translateY(-3px) scale(1.12);
 }
 .footer-social a[aria-label*="WhatsApp"]:hover,
 .footer-social a[aria-label*="WhatsApp"]:focus-visible {

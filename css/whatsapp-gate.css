@@ -1,0 +1,205 @@
+﻿/* ============================================================
+   WhatsApp Gate Modal — whatsapp-gate.css
+   ============================================================ */
+
+#wa-gate-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(20, 4, 10, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  backdrop-filter: blur(4px);
+}
+
+#wa-gate-overlay.is-visible {
+  opacity: 1;
+}
+
+.wa-gate__card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 2rem 1.75rem;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.28);
+  transform: translateY(18px);
+  transition: transform 0.28s ease;
+}
+
+#wa-gate-overlay.is-visible .wa-gate__card {
+  transform: translateY(0);
+}
+
+.wa-gate__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f4f4f4;
+  border: none;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.wa-gate__close:hover { background: #e0e0e0; }
+
+.wa-gate__header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.wa-gate__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.15rem;
+  font-family: inherit;
+}
+
+.wa-gate__subtitle {
+  font-size: 0.82rem;
+  color: #777;
+  margin: 0;
+}
+
+.wa-gate__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.wa-gate__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.wa-gate__label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #444;
+  letter-spacing: 0.02em;
+}
+
+.wa-gate__label span { color: #c0392b; }
+
+.wa-gate__input {
+  width: 100%;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.93rem;
+  color: #1a1a1a;
+  background: #fafafa;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+.wa-gate__input:focus {
+  outline: none;
+  border-color: #25D366;
+  box-shadow: 0 0 0 3px rgba(37,211,102,0.18);
+  background: #fff;
+}
+.wa-gate__input::placeholder { color: #bbb; }
+
+.wa-gate__error {
+  font-size: 0.78rem;
+  color: #c0392b;
+  font-weight: 500;
+}
+
+/* Chips */
+.wa-gate__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.wa-gate__chip {
+  cursor: pointer;
+}
+
+.wa-gate__chip input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.wa-gate__chip span {
+  display: inline-block;
+  padding: 0.38rem 0.85rem;
+  border: 1.5px solid #ddd;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #555;
+  background: #fafafa;
+  transition: all 0.15s;
+  cursor: pointer;
+  user-select: none;
+}
+
+.wa-gate__chip input:checked + span {
+  background: #25D366;
+  border-color: #25D366;
+  color: #fff;
+}
+
+.wa-gate__chip:hover span {
+  border-color: #25D366;
+  color: #25D366;
+}
+
+.wa-gate__chip input:checked + span:hover {
+  color: #fff;
+}
+
+/* Submit */
+.wa-gate__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.25rem;
+  transition: background 0.18s, transform 0.15s;
+  font-family: inherit;
+}
+.wa-gate__submit:hover {
+  background: #1ebe5d;
+  transform: translateY(-1px);
+}
+.wa-gate__submit:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .wa-gate__card {
+    padding: 1.5rem 1.25rem;
+  }
+}

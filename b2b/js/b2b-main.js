@@ -17,6 +17,7 @@ import { initLazyImageFade } from "../../js/lazy-images.js";
 import { createLightbox } from "../../js/lightbox.js";
 import { initHeroSlider } from "../../js/hero-slider.js";
 import { initProductCatalog } from "./product-catalog.js";
+import { initWhatsAppGate } from "../../js/whatsapp-gate.js";
 
 function init() {
   initNavigation();
@@ -24,6 +25,7 @@ function init() {
   initBackToTop();
   initLazyImageFade();
   initHeroSlider();
+  initWhatsAppGate();
 
   const lightbox = createLightbox();
   initProductCatalog(lightbox);
