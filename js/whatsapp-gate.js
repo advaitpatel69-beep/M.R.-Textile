@@ -1,19 +1,16 @@
-﻿/**
+/**
  * whatsapp-gate.js
- * Intercepts all WhatsApp links on the page and shows a 3-step qualification
- * modal: Name/Business, City/State, Inquiry type.
- * On confirm, opens WhatsApp with a clean pre-filled context message.
+ * Intercepts all WhatsApp links and shows a qualification modal:
+ * Name/Business, City/State, Inquiry type, Language preference (Hindi/English).
+ * Builds a bilingual pre-filled message and opens WhatsApp.
  */
 
 const WA_NUMBER = "919428393320";
 
-const INTENTS = [
-  "Wholesale Pricing",
-  "Product Catalog",
-  "Bulk Order",
-  "Custom / Special Order",
-  "Other",
-];
+const INTENTS = {
+  en: ["Wholesale Pricing", "Product Catalog", "Bulk Order", "Custom / Special Order", "Other"],
+  hi: ["होलसेल मूल्य जानकारी", "प्रोडक्ट कैटलॉग", "बल्क ऑर्डर", "कस्टम / विशेष ऑर्डर", "अन्य"]
+};
 
 function buildModal() {
   const overlay = document.createElement("div");
@@ -22,11 +19,13 @@ function buildModal() {
   overlay.setAttribute("aria-modal", "true");
   overlay.setAttribute("aria-label", "WhatsApp Inquiry");
 
-  const chips = INTENTS.map((t, i) => `
-    <label class="wa-gate__chip">
-      <input type="radio" name="wa-intent" value="${t}" ${i === 0 ? "checked" : ""} />
-      <span>${t}</span>
-    </label>`).join("");
+  const enChips = INTENTS.en.map((t, i) =>
+    `<label class="wa-gate__chip"><input type="radio" name="wa-intent" value="${t}" ${i === 0 ? "checked" : ""} /><span>${t}</span></label>`
+  ).join("");
+
+  const hiChips = INTENTS.hi.map((t, i) =>
+    `<label class="wa-gate__chip"><input type="radio" name="wa-intent" value="${t}" ${i === 0 ? "checked" : ""} /><span>${t}</span></label>`
+  ).join("");
 
   overlay.innerHTML = `
     <div class="wa-gate__card" id="wa-gate-card">
@@ -42,22 +41,41 @@ function buildModal() {
         </div>
       </div>
       <form class="wa-gate__form" id="wa-gate-form" novalidate>
+
+        <!-- Language toggle -->
+        <div class="wa-gate__field">
+          <label class="wa-gate__label">Message Language <span class="wa-gate__optional">(optional)</span></label>
+          <div class="wa-gate__lang-toggle" role="group" aria-label="Message language">
+            <label class="wa-gate__lang-opt">
+              <input type="radio" name="wa-lang" value="hi" checked />
+              <span>🇮🇳 Hindi</span>
+            </label>
+            <label class="wa-gate__lang-opt">
+              <input type="radio" name="wa-lang" value="en" />
+              <span>🇬🇧 English</span>
+            </label>
+          </div>
+        </div>
+
         <div class="wa-gate__field">
           <label class="wa-gate__label" for="wa-name">Your Name / Business Name <span aria-hidden="true">*</span></label>
           <input class="wa-gate__input" id="wa-name" type="text" placeholder="e.g. Rahul Saree Store" autocomplete="name" required />
           <span class="wa-gate__error" id="wa-name-err" hidden>Please enter your name.</span>
         </div>
+
         <div class="wa-gate__field">
           <label class="wa-gate__label" for="wa-city">City / State <span aria-hidden="true">*</span></label>
           <input class="wa-gate__input" id="wa-city" type="text" placeholder="e.g. Jaipur, Rajasthan" autocomplete="address-level2" required />
           <span class="wa-gate__error" id="wa-city-err" hidden>Please enter your city or state.</span>
         </div>
+
         <div class="wa-gate__field">
-          <label class="wa-gate__label">Inquiry Type <span aria-hidden="true">*</span></label>
-          <div class="wa-gate__chips" role="group" aria-label="Inquiry type">
-            ${chips}
+          <label class="wa-gate__label" id="wa-intent-label">Inquiry Type <span aria-hidden="true">*</span></label>
+          <div class="wa-gate__chips" id="wa-intent-chips" role="group" aria-labelledby="wa-intent-label">
+            ${enChips}
           </div>
         </div>
+
         <button type="submit" class="wa-gate__submit" id="wa-gate-submit">
           <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="20" aria-hidden="true">
             <circle cx="16" cy="16" r="16" fill="white"/>
@@ -65,10 +83,32 @@ function buildModal() {
           </svg>
           Confirm &amp; Open WhatsApp
         </button>
+
+        <!-- Fix 3: Reply-time assurance -->
+        <p class="wa-gate__assurance">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke-linecap="round"/></svg>
+          We typically reply within a few hours — guaranteed within 24 hours on business days.
+        </p>
+
       </form>
     </div>
   `;
   return overlay;
+}
+
+function updateIntentChips(overlay, lang) {
+  const container = overlay.querySelector("#wa-intent-chips");
+  const chips = INTENTS[lang].map((t, i) =>
+    `<label class="wa-gate__chip"><input type="radio" name="wa-intent" value="${t}" ${i === 0 ? "checked" : ""} /><span>${t}</span></label>`
+  ).join("");
+  container.innerHTML = chips;
+}
+
+function buildMessage(name, city, intent, lang) {
+  if (lang === "hi") {
+    return `नमस्ते M.R. Textile, मैं ${name} हूँ, ${city} से। मुझे ${intent} के बारे में जानकारी चाहिए।`;
+  }
+  return `Hi M.R. Textile, I'm ${name} from ${city}. My inquiry is about: ${intent}.`;
 }
 
 function openGate(e) {
@@ -84,6 +124,16 @@ function openGate(e) {
     overlay.querySelector("#wa-name").focus();
   });
 
+  // Language toggle — swap intent chips
+  overlay.querySelectorAll('input[name="wa-lang"]').forEach((radio) => {
+    radio.addEventListener("change", () => {
+      updateIntentChips(overlay, radio.value);
+    });
+  });
+
+  // Update chips immediately based on default (Hindi)
+  updateIntentChips(overlay, "hi");
+
   const close = () => {
     overlay.classList.remove("is-visible");
     setTimeout(() => overlay.remove(), 280);
@@ -97,9 +147,10 @@ function openGate(e) {
 
   overlay.querySelector("#wa-gate-form").addEventListener("submit", (ev) => {
     ev.preventDefault();
-    const name = overlay.querySelector("#wa-name").value.trim();
-    const city = overlay.querySelector("#wa-city").value.trim();
+    const name   = overlay.querySelector("#wa-name").value.trim();
+    const city   = overlay.querySelector("#wa-city").value.trim();
     const intent = overlay.querySelector('input[name="wa-intent"]:checked')?.value || "General Inquiry";
+    const lang   = overlay.querySelector('input[name="wa-lang"]:checked')?.value || "hi";
 
     const nameErr = overlay.querySelector("#wa-name-err");
     const cityErr = overlay.querySelector("#wa-city-err");
@@ -109,15 +160,18 @@ function openGate(e) {
     if (!name) { nameErr.hidden = false; overlay.querySelector("#wa-name").focus(); return; }
     if (!city) { cityErr.hidden = false; overlay.querySelector("#wa-city").focus(); return; }
 
-    const msg = "Hi M.R. Textile, I'm " + name + " from " + city + ". My inquiry is about: " + intent + ".";
-    const url = "https://wa.me/919428393320?text=" + encodeURIComponent(msg);
+    const msg = buildMessage(name, city, intent, lang);
+    const url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
     window.open(url, "_blank", "noopener,noreferrer");
     close();
   });
 }
 
 export function initWhatsAppGate() {
-  document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
-    link.addEventListener("click", openGate);
+  // Use event delegation on document so ALL WhatsApp links — including those
+  // injected by JS after DOMContentLoaded — trigger the gate.
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"]');
+    if (link) openGate(e);
   });
 }

@@ -1155,6 +1155,16 @@ noscript img {
 
 .about-visual {
   position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.about-visual:hover .about-visual__frame {
+  box-shadow: var(--shadow-xl, 0 20px 60px rgba(0,0,0,0.25));
+  transform: translateY(-4px);
+  transition: transform 0.35s var(--ease-silk), box-shadow 0.35s var(--ease-silk);
 }
 
 .about-visual__frame {
@@ -1432,10 +1442,11 @@ noscript img {
 
 .collection-card__link {
   display: block;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   color: inherit;
   text-decoration: none;
+  z-index: 3;
 }
 
 .collection-card.is-hidden {
@@ -1483,6 +1494,7 @@ noscript img {
   color: var(--color-gold-light);
   opacity: 0.85;
   z-index: 2;
+  pointer-events: none;
 }
 
 .collection-card__body {
@@ -1490,10 +1502,11 @@ noscript img {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 2;
+  z-index: 4;
   padding: var(--space-md);
   transform: translateY(14px);
   transition: transform var(--dur-med) var(--ease-silk);
+  pointer-events: none;
 }
 
 .collection-card:hover .collection-card__body,
