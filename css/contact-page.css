@@ -352,6 +352,72 @@
   margin-top: var(--space-xs);
 }
 
+/* --------------------------------------------------------------------------
+   BUSINESS CARD INSTAGRAM LINK & HOVER ANIMATION
+   -------------------------------------------------------------------------- */
+
+.cp-info-card__social {
+  margin-top: auto;
+  padding-top: var(--space-xs);
+}
+
+.cp-info-card__insta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 14px 5px 5px;
+  border-radius: 99px;
+  background: rgba(214, 36, 159, 0.06);
+  border: 1px solid rgba(214, 36, 159, 0.18);
+  text-decoration: none;
+  color: var(--color-ink-soft, #555);
+  transition: transform var(--dur-fast) var(--ease-silk),
+              background var(--dur-fast) var(--ease-silk),
+              border-color var(--dur-fast) var(--ease-silk),
+              box-shadow var(--dur-fast) var(--ease-silk);
+  width: fit-content;
+}
+
+.cp-info-card__insta-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: block;
+  flex-shrink: 0;
+  transition: transform var(--dur-fast) var(--ease-silk),
+              box-shadow var(--dur-fast) var(--ease-silk);
+}
+
+.cp-info-card__insta-handle {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-ink-soft, #555);
+  transition: color var(--dur-fast) var(--ease-silk),
+              transform var(--dur-fast) var(--ease-silk);
+}
+
+.cp-info-card__insta-link:hover,
+.cp-info-card__insta-link:focus-visible {
+  background: rgba(214, 36, 159, 0.12);
+  border-color: rgba(214, 36, 159, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(214, 36, 159, 0.2);
+}
+
+.cp-info-card__insta-link:hover .cp-info-card__insta-icon,
+.cp-info-card__insta-link:focus-visible .cp-info-card__insta-icon {
+  transform: scale(1.12) rotate(5deg);
+  box-shadow: 0 3px 10px rgba(214, 36, 159, 0.35);
+}
+
+.cp-info-card__insta-link:hover .cp-info-card__insta-handle,
+.cp-info-card__insta-link:focus-visible .cp-info-card__insta-handle {
+  color: #d6249f;
+  font-weight: 600;
+  transform: translateX(1px);
+}
+
 
 /* --------------------------------------------------------------------------
    WHATSAPP BUTTON VARIANT
