@@ -45,4 +45,63 @@ export function initCollections(lightbox) {
       lightbox.open(items, 0, trigger);
     });
   });
+
+  /* ---- Mobile / Touch interaction: active ONLY when touch/swipe is inside card area ---- */
+  cards.forEach((card) => {
+    let isTouching = false;
+
+    const isTouchInsideCard = (touch) => {
+      const rect = card.getBoundingClientRect();
+      return (
+        touch.clientX >= rect.left &&
+        touch.clientX <= rect.right &&
+        touch.clientY >= rect.top &&
+        touch.clientY <= rect.bottom
+      );
+    };
+
+    card.addEventListener(
+      "touchstart",
+      () => {
+        isTouching = true;
+        card.classList.add("is-active");
+      },
+      { passive: true }
+    );
+
+    card.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!isTouching) return;
+        const touch = e.touches[0];
+        if (!touch) return;
+        if (isTouchInsideCard(touch)) {
+          card.classList.add("is-active");
+        } else {
+          card.classList.remove("is-active");
+        }
+      },
+      { passive: true }
+    );
+
+    card.addEventListener(
+      "touchend",
+      () => {
+        isTouching = false;
+        setTimeout(() => {
+          card.classList.remove("is-active");
+        }, 250);
+      },
+      { passive: true }
+    );
+
+    card.addEventListener(
+      "touchcancel",
+      () => {
+        isTouching = false;
+        card.classList.remove("is-active");
+      },
+      { passive: true }
+    );
+  });
 }

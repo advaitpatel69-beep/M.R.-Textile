@@ -48,11 +48,11 @@ function buildModal() {
           <div class="wa-gate__lang-toggle" role="group" aria-label="Message language">
             <label class="wa-gate__lang-opt">
               <input type="radio" name="wa-lang" value="hi" checked />
-              <span>🇮🇳 Hindi</span>
+              <span>Hindi</span>
             </label>
             <label class="wa-gate__lang-opt">
               <input type="radio" name="wa-lang" value="en" />
-              <span>🇬🇧 English</span>
+              <span>English</span>
             </label>
           </div>
         </div>
@@ -106,9 +106,9 @@ function updateIntentChips(overlay, lang) {
 
 function buildMessage(name, city, intent, lang) {
   if (lang === "hi") {
-    return `नमस्ते M.R. Textile, मैं ${name} हूँ, ${city} से। मुझे ${intent} के बारे में जानकारी चाहिए।`;
+    return `नमस्ते M.R. Textile, मैं *${name}* हूँ, *${city}* से। मुझे ${intent} के बारे में जानकारी चाहिए।`;
   }
-  return `Hi M.R. Textile, I'm ${name} from ${city}. My inquiry is about: ${intent}.`;
+  return `Hi M.R. Textile, I'm *${name}* from *${city}*. My inquiry is about: ${intent}.`;
 }
 
 function openGate(e) {

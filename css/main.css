@@ -1454,7 +1454,8 @@ noscript img {
 }
 
 .collection-card:hover,
-.collection-card:focus-within {
+.collection-card:focus-within,
+.collection-card.is-active {
   box-shadow: var(--shadow-lg);
 }
 
@@ -1462,6 +1463,28 @@ noscript img {
   position: absolute;
   inset: 0;
   overflow: hidden;
+}
+
+/* Progressive blur & dark gradient from bottom to top - triggers ONLY on hover / active */
+.collection-card__img-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 25%, rgba(0,0,0,0.3) 50%, transparent 72%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 25%, rgba(0,0,0,0.3) 50%, transparent 72%);
+  background: linear-gradient(0deg, rgba(20, 2, 6, 0.7) 0%, rgba(20, 2, 6, 0.3) 35%, transparent 65%);
+  opacity: 0;
+  transition: opacity var(--dur-med) var(--ease-silk);
+  z-index: 2;
+}
+
+.collection-card:hover .collection-card__img-wrap::after,
+.collection-card:focus-within .collection-card__img-wrap::after,
+.collection-card.is-active .collection-card__img-wrap::after {
+  opacity: 1;
 }
 
 .collection-card img {
@@ -1474,7 +1497,8 @@ noscript img {
 }
 
 .collection-card:hover img,
-.collection-card:focus-within img {
+.collection-card:focus-within img,
+.collection-card.is-active img {
   transform: scale(1.09);
 }
 
@@ -1483,6 +1507,14 @@ noscript img {
   position: absolute;
   inset: 0;
   background: linear-gradient(0deg, rgba(36, 8, 15, 0.88) 0%, rgba(36, 8, 15, 0.05) 55%, rgba(36, 8, 15, 0.25) 100%);
+  pointer-events: none;
+  transition: background var(--dur-med) var(--ease-silk);
+}
+
+.collection-card:hover::after,
+.collection-card:focus-within::after,
+.collection-card.is-active::after {
+  background: linear-gradient(0deg, rgba(16, 2, 5, 0.95) 0%, rgba(26, 3, 9, 0.65) 35%, rgba(36, 8, 15, 0.05) 60%, rgba(36, 8, 15, 0.2) 100%);
 }
 
 .collection-card__corner {
@@ -1510,7 +1542,8 @@ noscript img {
 }
 
 .collection-card:hover .collection-card__body,
-.collection-card:focus-within .collection-card__body {
+.collection-card:focus-within .collection-card__body,
+.collection-card.is-active .collection-card__body {
   transform: translateY(0);
 }
 
@@ -1545,7 +1578,7 @@ noscript img {
   color: var(--color-on-dark);
   opacity: 0;
   transform: translateY(6px);
-  transition: opacity var(--dur-med) var(--ease-silk), transform var(--dur-med) var(--ease-silk);
+  transition: opacity var(--dur-med) var(--ease-silk), transform var(--dur-med) var(--ease-silk), color var(--dur-fast) var(--ease-silk);
 }
 
 .collection-card__cta::before {
@@ -1556,7 +1589,8 @@ noscript img {
 }
 
 .collection-card:hover .collection-card__cta,
-.collection-card:focus-within .collection-card__cta {
+.collection-card:focus-within .collection-card__cta,
+.collection-card.is-active .collection-card__cta {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1567,7 +1601,9 @@ noscript img {
   transition: transform var(--dur-fast) var(--ease-silk);
 }
 
-.collection-card:hover .collection-card__cta svg {
+.collection-card:hover .collection-card__cta svg,
+.collection-card:focus-within .collection-card__cta svg,
+.collection-card.is-active .collection-card__cta svg {
   transform: translateX(4px);
 }
 
@@ -2685,6 +2721,9 @@ noscript img {
 @media (max-width: 860px) {
   .collections-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .collection-card.is-active .collection-card__cta {
+    color: var(--color-gold-light);
   }
   .masonry {
     columns: 2;
