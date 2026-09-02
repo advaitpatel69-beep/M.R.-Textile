@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-IN">
 
 <head>
@@ -164,6 +164,12 @@
       <li><a href="index.html#testimonials">Testimonials</a></li>
       <li><a href="index.html#faq">FAQ</a></li>
       <li><a href="contact.html">Contact Us</a></li>
+      <li>
+        <button type="button" class="mobile-menu__bc-trigger" data-open-business-card aria-label="View our official business cards">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="6" width="20" height="14" rx="2" stroke-linecap="round"/><path d="M2 10h20" stroke-linecap="round"/><path d="M6 15h4M6 17h6" stroke-linecap="round"/></svg>
+          View Business Card
+        </button>
+      </li>
     </ul>
     <div class="mobile-menu__foot">
       <a href="tel:+919428393320">+91 94283 93320</a>
@@ -710,6 +716,42 @@
 
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script type="module" src="js/main.js"></script>
+
+  <!-- BUSINESS CARD MODAL -->
+  <div class="bc-modal" data-business-card-modal aria-hidden="true" role="dialog" aria-modal="true" aria-label="Business Card Viewer">
+    <div class="bc-modal__backdrop"></div>
+    <div class="bc-modal__panel">
+      <div class="bc-modal__header">
+        <div class="bc-modal__title-group">
+          <span class="bc-modal__eyebrow">Official Cards</span>
+          <h2 class="bc-modal__title">Our Business Cards</h2>
+        </div>
+        <button class="bc-modal__close" aria-label="Close business card viewer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="bc-modal__image-wrap">
+        <img class="bc-modal__img" src="" alt="M.R. Textile Business Card" width="700" height="400" />
+      </div>
+      <div class="bc-modal__info">
+        <span class="bc-modal__card-name"></span>
+        <span class="bc-modal__counter"></span>
+      </div>
+      <div class="bc-modal__thumbs" role="group" aria-label="Switch card"></div>
+      <hr class="bc-modal__divider" />
+      <div class="bc-modal__actions">
+        <button type="button" class="btn btn--outline btn--sm" data-bc-download-current>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke-linecap="round"/><polyline points="7 10 12 15 17 10" stroke-linecap="round"/><line x1="12" y1="15" x2="12" y2="3" stroke-linecap="round"/></svg>
+          Download This Card
+        </button>
+        <button type="button" class="btn btn--gold btn--sm" data-bc-download-all>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke-linecap="round"/><polyline points="7 10 12 15 17 10" stroke-linecap="round"/><line x1="12" y1="15" x2="12" y2="3" stroke-linecap="round"/></svg>
+          Download Both Cards
+        </button>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>

@@ -49,6 +49,11 @@ export function initNavigation() {
       link.addEventListener("click", closeMenu);
     });
 
+    // Also close menu when the "View Business Card" button is clicked
+    mobileMenu.querySelectorAll("[data-open-business-card]").forEach((btn) => {
+      btn.addEventListener("click", closeMenu);
+    });
+
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && mobileMenu.classList.contains("is-open")) {
         closeMenu();

@@ -12,6 +12,7 @@ import { initScrollProgress } from "./scroll-progress.js";
 import { initBackToTop } from "./back-to-top.js";
 import { initLazyImageFade } from "./lazy-images.js";
 import { initWhatsAppGate } from "./whatsapp-gate.js";
+import { initBusinessCard } from "./business-card.js";
 
 function init() {
   initPreloader();
@@ -23,6 +24,7 @@ function init() {
   initBackToTop();
   initLazyImageFade();
   initWhatsAppGate();
+  initBusinessCard();
 }
 
 if (document.readyState === "loading") {

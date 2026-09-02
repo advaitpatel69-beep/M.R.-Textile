@@ -20,6 +20,7 @@ import { initBackToTop } from "./back-to-top.js";
 import { initLazyImageFade } from "./lazy-images.js";
 import { initAboutSlider } from "./about-slider.js";
 import { initWhatsAppGate } from "./whatsapp-gate.js";
+import { initBusinessCard } from "./business-card.js";
 
 function init() {
   initPreloader();
@@ -35,6 +36,7 @@ function init() {
   initBackToTop();
   initLazyImageFade();
   initWhatsAppGate();
+  initBusinessCard();
 
   const lightbox = createLightbox();
   initGallery(lightbox);
