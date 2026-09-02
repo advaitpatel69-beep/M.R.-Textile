@@ -2858,12 +2858,12 @@ noscript img {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  background: #ffffff;
+  background: linear-gradient(175deg, #fdfbf7 0%, #f7f2e8 100%);
   border-radius: 18px;
-  border: 1px solid rgba(176, 141, 87, 0.22);
+  border: 1.5px solid rgba(176, 141, 87, 0.3);
   border-top: 3px solid var(--color-gold);
   padding: 1.5rem 1.6rem 1.4rem;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 20px 50px rgba(36, 27, 20, 0.22), 0 2px 10px rgba(176, 141, 87, 0.08);
   overflow-y: auto;
   animation: bc-panel-in var(--dur-med) var(--ease-silk) forwards;
 }
@@ -2898,21 +2898,21 @@ noscript img {
 .bc-modal__title {
   font-family: var(--font-display);
   font-size: 1.35rem;
-  color: #1a1a1a;
+  color: #241b14;
   line-height: 1.2;
   margin: 0;
   font-weight: 700;
 }
 
-/* ---- Close button (clean circular button like WhatsApp modal) ---- */
+/* ---- Close button (circular, cream-toned) ---- */
 .bc-modal__close {
   flex-shrink: 0;
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #f4f4f4;
-  border: 1px solid #ebebeb;
-  color: #555;
+  background: #ede6d8;
+  border: 1px solid #dfd6c4;
+  color: #4a3d31;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2922,8 +2922,8 @@ noscript img {
 
 .bc-modal__close:hover,
 .bc-modal__close:focus-visible {
-  background: #e4e4e4;
-  color: #111;
+  background: #dfd6c4;
+  color: #241b14;
   transform: rotate(90deg);
 }
 
@@ -2937,14 +2937,14 @@ noscript img {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #e8e4dc;
-  background: #f9f7f4;
+  border: 1px solid #e5dccf;
+  background: #f2ece0;
   aspect-ratio: 3.5 / 2;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 14px rgba(36, 27, 20, 0.06);
 }
 
 .bc-modal__img {
@@ -2976,7 +2976,7 @@ noscript img {
   font-family: var(--font-body);
   font-size: 0.86rem;
   font-weight: 600;
-  color: #2b2b2b;
+  color: #2b221a;
   letter-spacing: 0.01em;
 }
 
@@ -2984,8 +2984,8 @@ noscript img {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: #666;
-  background: #f2eee8;
+  color: #5a4c3e;
+  background: #ebe3d4;
   padding: 0.2rem 0.6rem;
   border-radius: 99px;
 }
@@ -3003,12 +3003,12 @@ noscript img {
   height: 46px;
   border-radius: 8px;
   overflow: hidden;
-  border: 2px solid #e2ded5;
-  background: #ffffff;
+  border: 2px solid #dfd6c5;
+  background: #fdfbf7;
   padding: 2px;
-  opacity: 0.7;
+  opacity: 0.75;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 6px rgba(36, 27, 20, 0.05);
   transition: border-color var(--dur-fast) var(--ease-silk),
               opacity var(--dur-fast) var(--ease-silk),
               transform var(--dur-fast) var(--ease-silk),
@@ -3024,7 +3024,7 @@ noscript img {
 .bc-modal__thumb.is-active {
   border-color: var(--color-maroon);
   opacity: 1;
-  box-shadow: 0 0 0 2px rgba(107, 18, 32, 0.16), 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 0 2px rgba(107, 18, 32, 0.18), 0 4px 10px rgba(36, 27, 20, 0.1);
 }
 
 .bc-modal__thumb img {
@@ -3038,7 +3038,7 @@ noscript img {
 /* ---- Divider ---- */
 .bc-modal__divider {
   border: none;
-  border-top: 1px solid #f0ece6;
+  border-top: 1px solid #e8e0d2;
   margin: 0.1rem 0;
 }
 
@@ -3064,13 +3064,13 @@ noscript img {
 .bc-modal__actions .btn--outline {
   color: var(--color-maroon);
   border: 1.5px solid var(--color-maroon);
-  background: #ffffff;
+  background: #fdfbf7;
   box-shadow: 0 2px 6px rgba(107, 18, 32, 0.06);
 }
 
 .bc-modal__actions .btn--outline:hover,
 .bc-modal__actions .btn--outline:focus-visible {
-  color: #ffffff;
+  color: var(--color-ivory);
   background: var(--color-maroon);
   border-color: var(--color-maroon);
   transform: translateY(-2px);

@@ -206,14 +206,68 @@
   transform: scaleX(1);
 }
 
+/* ---- Distinctive Featured Phone Card (Champagne Gold Silk — NOT dark maroon) ---- */
+.cp-info-card--phone,
 .cp-info-card--featured {
-  background: var(--color-ivory);
-  border-color: var(--color-border);
-  color: inherit;
+  background: linear-gradient(155deg, #fdf8ee 0%, #f7ecd7 50%, #ede0c6 100%);
+  border: 1.5px solid rgba(176, 141, 87, 0.55);
+  box-shadow: 0 8px 26px rgba(176, 141, 87, 0.16), 0 0 0 1px rgba(176, 141, 87, 0.18);
+  position: relative;
 }
 
+.cp-info-card--phone::before,
 .cp-info-card--featured::before {
-  background: linear-gradient(90deg, var(--color-gold), transparent);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5px;
+  background: linear-gradient(90deg, #b08d57, #dfb778, #b08d57);
+  transform: scaleX(1);
+  opacity: 0.95;
+}
+
+.cp-info-card--phone:hover,
+.cp-info-card--featured:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-gold);
+  box-shadow: 0 16px 36px rgba(176, 141, 87, 0.25), 0 0 0 1px rgba(176, 141, 87, 0.55);
+}
+
+.cp-info-card--phone .cp-info-card__icon,
+.cp-info-card--featured .cp-info-card__icon {
+  background: linear-gradient(135deg, #dfb778 0%, #b08d57 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(176, 141, 87, 0.35);
+}
+
+.cp-info-card--phone:hover .cp-info-card__icon,
+.cp-info-card--featured:hover .cp-info-card__icon {
+  background: linear-gradient(135deg, #7a1424 0%, #4a0c17 100%);
+  color: #eedbb8;
+  box-shadow: 0 6px 18px rgba(107, 18, 32, 0.28);
+}
+
+.cp-info-card--phone .cp-info-card__label,
+.cp-info-card--featured .cp-info-card__label {
+  color: #8c6426;
+  font-weight: 700;
+}
+
+.cp-info-card--phone .cp-info-card__value,
+.cp-info-card--featured .cp-info-card__value {
+  color: var(--color-maroon);
+}
+
+.cp-info-card--phone .cp-info-card__link,
+.cp-info-card--featured .cp-info-card__link {
+  color: var(--color-maroon);
+  font-weight: 600;
+}
+.cp-info-card--phone .cp-info-card__link:hover,
+.cp-info-card--featured .cp-info-card__link:hover {
+  color: #241b14;
 }
 
 .cp-info-card__icon {
