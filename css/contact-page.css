@@ -207,13 +207,13 @@
 }
 
 .cp-info-card--featured {
-  background: linear-gradient(145deg, var(--color-maroon-deep), var(--color-burgundy));
-  border-color: transparent;
-  color: var(--color-on-dark);
+  background: var(--color-ivory);
+  border-color: var(--color-border);
+  color: inherit;
 }
 
 .cp-info-card--featured::before {
-  background: linear-gradient(90deg, var(--color-gold-light), transparent);
+  background: linear-gradient(90deg, var(--color-gold), transparent);
 }
 
 .cp-info-card__icon {
@@ -235,12 +235,7 @@
   height: 22px;
 }
 
-.cp-info-card--featured .cp-info-card__icon {
-  background: rgba(176, 141, 87, 0.2);
-  color: var(--color-gold-light);
-}
-
-.cp-info-card:not(.cp-info-card--featured):hover .cp-info-card__icon {
+.cp-info-card:hover .cp-info-card__icon {
   background: var(--color-maroon);
   color: var(--color-gold-light);
 }
@@ -262,20 +257,12 @@
   margin-bottom: 0.2em;
 }
 
-.cp-info-card--featured .cp-info-card__label {
-  color: var(--color-gold-light);
-}
-
 .cp-info-card__value {
   font-family: var(--font-display);
   font-size: var(--fs-h5);
   color: var(--color-maroon-deep);
   line-height: var(--lh-snug);
   max-width: none;
-}
-
-.cp-info-card--featured .cp-info-card__value {
-  color: var(--color-on-dark);
 }
 
 .cp-info-card__sub {
@@ -287,19 +274,11 @@
   margin-top: 0.2em;
 }
 
-.cp-info-card--featured .cp-info-card__sub {
-  color: var(--color-on-dark-soft);
-}
-
 .cp-info-card__meta {
   font-size: var(--fs-eyebrow);
   color: var(--color-ink-faint);
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
-}
-
-.cp-info-card--featured .cp-info-card__meta {
-  color: var(--color-on-dark-soft);
 }
 
 .cp-info-card--note {
@@ -678,16 +657,30 @@
   100% { transform: rotate(0deg); }
 }
 
+#btn-call-now {
+  border: 1.5px solid var(--color-maroon);
+  color: var(--color-maroon);
+  background: transparent;
+  font-weight: 600;
+}
+
 /* Call Now button lift + icon ring */
 #btn-call-now,
 #cta-btn-call {
   transition: background var(--dur-fast) var(--ease-silk),
               color var(--dur-fast) var(--ease-silk),
+              border-color var(--dur-fast) var(--ease-silk),
               transform var(--dur-fast) var(--ease-silk),
               box-shadow var(--dur-fast) var(--ease-silk);
 }
 #btn-call-now:hover,
-#btn-call-now:focus-visible,
+#btn-call-now:focus-visible {
+  background: var(--color-maroon);
+  color: #ffffff;
+  border-color: var(--color-maroon);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(107, 18, 32, 0.22);
+}
 #cta-btn-call:hover,
 #cta-btn-call:focus-visible {
   transform: translateY(-3px);
