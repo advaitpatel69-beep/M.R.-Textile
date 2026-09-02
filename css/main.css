@@ -3051,36 +3051,38 @@ noscript img {
   color: var(--color-gold);
 }
 
-/* ---- Contact page trigger button ---- */
+/* ---- Contact page trigger button (light card background) ---- */
 .bc-contact-trigger {
   display: inline-flex;
   align-items: center;
   gap: 0.55em;
   margin-top: var(--space-sm);
-  padding: 0.7em 1.4em;
+  padding: 0.65em 1.3em;
   font-size: var(--fs-body-sm);
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--color-border-dark);
-  color: var(--color-gold-light);
-  background: rgba(176, 141, 87, 0.08);
+  border: 1.5px solid var(--color-maroon);
+  color: var(--color-maroon);
+  background: transparent;
   cursor: pointer;
   transition: background var(--dur-fast) var(--ease-silk),
-              border-color var(--dur-fast) var(--ease-silk),
+              color var(--dur-fast) var(--ease-silk),
               transform var(--dur-fast) var(--ease-silk),
               box-shadow var(--dur-fast) var(--ease-silk);
+  width: 100%;
+  justify-content: center;
 }
 
 .bc-contact-trigger:hover,
 .bc-contact-trigger:focus-visible {
-  background: var(--color-gold);
-  border-color: var(--color-gold);
-  color: var(--color-maroon-deep);
+  background: var(--color-maroon);
+  border-color: var(--color-maroon);
+  color: var(--color-ivory);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 4px 16px rgba(107, 18, 32, 0.22);
 }
 
 .bc-contact-trigger svg {
@@ -3110,4 +3112,27 @@ noscript img {
     width: 64px;
     height: 40px;
   }
+}
+
+/* ---- "Download This Card" override inside the dark modal ---- */
+/* .btn--outline uses --color-maroon which is invisible on dark background */
+.bc-modal__actions .btn--outline {
+  color: var(--color-ivory);
+  border-color: rgba(240, 228, 210, 0.45);
+  background: transparent;
+}
+.bc-modal__actions .btn--outline:hover,
+.bc-modal__actions .btn--outline:focus-visible {
+  color: var(--color-maroon-deep);
+  background: var(--color-ivory);
+  border-color: var(--color-ivory);
+}
+
+/* ---- Thumbnail image should fill the thumb button ---- */
+.bc-modal__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 3px;
 }

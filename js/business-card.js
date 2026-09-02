@@ -64,7 +64,7 @@ export function initBusinessCard() {
     img.alt   = card.name;
     img.width = 80;
     img.height = 48;
-    img.loading = "lazy";
+    img.loading = "eager"; // thumbnails must load even when modal is hidden
 
     thumb.appendChild(img);
     thumb.addEventListener("click", () => switchTo(i));
