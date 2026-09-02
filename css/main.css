@@ -2847,22 +2847,22 @@ noscript img {
 .bc-modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(20, 10, 8, 0.95);
-  backdrop-filter: blur(8px);
+  background: rgba(20, 10, 8, 0.82);
+  backdrop-filter: blur(3px);
 }
 
 .bc-modal__panel {
   position: relative;
   z-index: 2;
-  width: min(94vw, 640px);
-  max-height: 92vh;
+  width: min(92vw, 480px);
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
   background: linear-gradient(160deg, var(--color-maroon-deep), var(--color-burgundy) 80%);
   border: 1px solid var(--color-border-dark);
   border-radius: var(--radius-lg);
-  padding: var(--space-md) var(--space-md) var(--space-sm);
+  padding: var(--space-sm) var(--space-sm) var(--space-xs);
   box-shadow: var(--shadow-lg), 0 0 0 1px rgba(176,141,87,0.08);
   overflow-y: auto;
   animation: bc-panel-in var(--dur-med) var(--ease-silk) forwards;
@@ -3055,10 +3055,10 @@ noscript img {
 .bc-contact-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 0.55em;
+  gap: 0.45em;
   margin-top: var(--space-sm);
-  padding: 0.65em 1.3em;
-  font-size: var(--fs-body-sm);
+  padding: 0.45em 1em;
+  font-size: 0.72rem;
   font-family: var(--font-body);
   font-weight: 600;
   letter-spacing: var(--ls-wide);
@@ -3072,7 +3072,7 @@ noscript img {
               color var(--dur-fast) var(--ease-silk),
               transform var(--dur-fast) var(--ease-silk),
               box-shadow var(--dur-fast) var(--ease-silk);
-  width: 100%;
+  width: auto;
   justify-content: center;
 }
 
@@ -3085,10 +3085,17 @@ noscript img {
   box-shadow: 0 4px 16px rgba(107, 18, 32, 0.22);
 }
 
+/* Slide icon slightly right on hover */
+.bc-contact-trigger:hover svg,
+.bc-contact-trigger:focus-visible svg {
+  transform: translateX(2px);
+}
+
 .bc-contact-trigger svg {
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   flex-shrink: 0;
+  transition: transform var(--dur-fast) var(--ease-silk);
 }
 
 /* ---- Responsive ---- */
@@ -3136,3 +3143,45 @@ noscript img {
   display: block;
   border-radius: 3px;
 }
+
+/* ---- Footer "Business Card" link (looks like a normal footer nav link) ---- */
+.footer-bc-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity var(--dur-fast) var(--ease-silk),
+              color var(--dur-fast) var(--ease-silk);
+  text-align: left;
+}
+.footer-bc-link:hover,
+.footer-bc-link:focus-visible {
+  opacity: 1;
+  color: var(--color-gold-light);
+}
+
+/* ---- Inline "View Business Card" button inside FAQ answers ---- */
+.faq-bc-inline-btn {
+  display: inline;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  color: var(--color-maroon);
+  cursor: pointer;
+  border-bottom: 1px dashed var(--color-maroon);
+  transition: color var(--dur-fast) var(--ease-silk),
+              border-color var(--dur-fast) var(--ease-silk);
+}
+.faq-bc-inline-btn:hover,
+.faq-bc-inline-btn:focus-visible {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
