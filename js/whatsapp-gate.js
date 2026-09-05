@@ -172,6 +172,7 @@ export function initWhatsAppGate() {
   // injected by JS after DOMContentLoaded — trigger the gate.
   document.addEventListener("click", (e) => {
     const link = e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"]');
-    if (link) openGate(e);
+    if (link && !link.hasAttribute("data-no-gate")) openGate(e);
   });
+
 }
