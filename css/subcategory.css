@@ -134,7 +134,7 @@ section, .container, .site-header, .site-footer { max-width: 100%; }
 
 @media (max-width: 580px) {
   .features-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -246,7 +246,8 @@ section, .container, .site-header, .site-footer { max-width: 100%; }
 
 @media (max-width: 640px) {
   .product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
   }
 }
 
@@ -414,7 +415,7 @@ section, .container, .site-header, .site-footer { max-width: 100%; }
 
 @media (max-width: 580px) {
   .perfect-for-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
