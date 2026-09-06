@@ -671,7 +671,7 @@
     justify-content: center;
   }
   .cp-info-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
   .cp-about__img-accent {
     display: none;

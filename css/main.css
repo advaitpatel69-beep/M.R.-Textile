@@ -2754,7 +2754,7 @@ noscript img {
     columns: 2;
   }
   .feature-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -2794,21 +2794,11 @@ noscript img {
   }
 
   .collections-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .masonry {
-    columns: 2;
-  }
-
-  /* Contact cards: 2 per row on mobile */
-  .contact-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Tighten feature card padding so 2-col fits comfortably */
-  .feature-card {
-    padding: var(--space-md) var(--space-sm);
+    columns: 1;
   }
 
   .footer-grid {
