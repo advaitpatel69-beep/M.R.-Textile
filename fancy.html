@@ -15,7 +15,7 @@
   <meta property="og:site_name" content="M.R. Textile / M.R. Sarees" />
   <meta property="og:title" content="Wholesale Fancy Sarees Surat | M.R. Textile" />
   <meta property="og:description" content="Buy fancy pattern sarees wholesale from Surat." />
-  <meta property="og:image" content="https://mrtextile.online/images/sarees/fancy-patern-sarees/saree_1.jpeg" />
+  <meta property="og:image" content="https://mrtextile.online/images/sarees/fancy-patern-sarees/saree_104.jpg" />
   <meta property="og:url" content="https://mrtextile.online/fancy.html" />
   <meta property="og:locale" content="en_IN" />
 
@@ -23,7 +23,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Wholesale Fancy Sarees Surat | M.R. Textile" />
   <meta name="twitter:description" content="Buy fancy pattern sarees wholesale from Surat." />
-  <meta name="twitter:image" content="https://mrtextile.online/images/sarees/fancy-patern-sarees/saree_1.jpeg" />
+  <meta name="twitter:image" content="https://mrtextile.online/images/sarees/fancy-patern-sarees/saree_104.jpg" />
 
   <!-- Favicons: small sizes use clean monogram, large sizes use detailed mandala logo -->
   <link rel="icon" href="favicon.ico" sizes="any" />
@@ -192,7 +192,8 @@
     
     
     
-    <section class="category-hero" style="background-image: url('images/sarees/fancy-patern-sarees/saree_1.jpeg');" id="hero">
+    
+    <section class="category-hero" style="background-image: url('images/sarees/fancy-patern-sarees/saree_104.jpg');" id="hero">
       <div class="category-hero__content" data-reveal="fade">
         <nav class="category-hero__breadcrumbs" aria-label="Breadcrumb">
           <a href="index.html">Home</a><span>&rarr;</span>
@@ -205,6 +206,7 @@
     </section>
 
     <!-- ============================== CATEGORY INTRO ============================== -->
+    
     
     
     
@@ -350,10 +352,191 @@
       if (grid && grid.parentNode) grid.parentNode.insertBefore(empty, grid.nextSibling);
     })();
     </script>
+
+    <!-- Product search bar: hidden until JS runs -->
+    <div id="mr-search-wrap" style="display:none;margin:0 0 24px;">
+      <div style="
+        display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+        background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);
+        border-radius:50px;padding:10px 20px;
+      ">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" style="opacity:.5;flex-shrink:0">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input id="mr-search-input" type="search" placeholder="Search products…"
+          aria-label="Search products in this collection"
+          style="
+            flex:1;min-width:180px;background:transparent;border:none;
+            outline:none;font-size:1rem;color:inherit;font-family:inherit;
+          " />
+        <span id="mr-search-count" style="font-size:0.82rem;opacity:.55;white-space:nowrap">
+          5 products
+        </span>
+      </div>
+      <p id="mr-search-empty" style="
+        display:none;text-align:center;padding:40px 0;opacity:.5;font-size:.95rem;
+      ">No products matched your search.</p>
+    </div>
+    <script>
+    (function(){
+      var wrap  = document.getElementById('mr-search-wrap');
+      var input = document.getElementById('mr-search-input');
+      var count = document.getElementById('mr-search-count');
+      var empty = document.getElementById('mr-search-empty');
+      if (!wrap || !input) return;
+      wrap.style.display = 'block'; // reveal — we know JS is running
+
+      function getCards() {
+        return Array.from(document.querySelectorAll('.product-grid .product-card'));
+      }
+
+      function filter() {
+        var q    = input.value.trim().toLowerCase();
+        var cards = getCards();
+        var shown = 0;
+        cards.forEach(function(card) {
+          var title = (card.getAttribute('data-product-title') || '').toLowerCase();
+          var desc  = (card.getAttribute('data-product-desc')  || '').toLowerCase();
+          var match = !q || title.indexOf(q) !== -1 || desc.indexOf(q) !== -1;
+          card.style.display = match ? '' : 'none';
+          if (match) shown++;
+        });
+        count.textContent = shown + ' product' + (shown !== 1 ? 's' : '');
+        empty.style.display = shown === 0 && q ? 'block' : 'none';
+      }
+
+      input.addEventListener('input', filter);
+      // Place empty-message after grid when it exists
+      var grid = document.querySelector('.product-grid');
+      if (grid && grid.parentNode) grid.parentNode.insertBefore(empty, grid.nextSibling);
+    })();
+    </script>
 <div class="product-grid">
 
-          <div class="no-products">
-            <p>No products currently available in this category.</p>
+          <div class="product-card" data-reveal="rise" data-reveal-group="products"
+            data-product-title="Chahat"
+            data-product-desc="Elegant Fancy saree with delicate floral motifs and a richly contrast pallu."
+            data-product-images="images/sarees/fancy-patern-sarees/saree_104.jpg"
+            data-product-colors="Multiple Options"
+            data-product-fabric="Premium Fabric"
+            data-product-occasions="Retail &amp; Wholesale">
+            <div class="product-card__img-container" role="button" aria-label="View Fancy Sarees catalog gallery">
+              
+              <img src="images/sarees/fancy-patern-sarees/saree_104.jpg"
+                alt="Chahat" loading="eager" />
+              <div class="product-card__overlay"><span class="btn btn--ghost btn--sm"
+                  style="position: absolute; top:50%; left:50%; transform:translate(-50%,-50%);">Open Catalog</span>
+              </div>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Chahat</h3>
+              <p class="product-card__desc">Elegant Fancy saree with delicate floral motifs and a richly contrast pallu.</p>
+              
+              
+              <a id="wa-btn-19" href="https://wa.me/919428393320?text=Hi%20M.R.%20Textile%2C%20I%20am%20a%20retailer%20and%20I%20want%20to%20inquire%20about%20bulk%20ordering%20from%20your%20collection." target="_blank" rel="noopener"
+                class="btn btn--gold product-card__btn">Send Inquiry</a>
+            </div>
+          </div>
+
+          <div class="product-card" data-reveal="rise" data-reveal-group="products"
+            data-product-title="Sunidhi"
+            data-product-desc=""
+            data-product-images="images/sarees/fancy-patern-sarees/saree_105.jpg"
+            data-product-colors="Multiple Options"
+            data-product-fabric="Premium Fabric"
+            data-product-occasions="Retail &amp; Wholesale">
+            <div class="product-card__img-container" role="button" aria-label="View Fancy Sarees catalog gallery">
+              
+              <img src="images/sarees/fancy-patern-sarees/saree_105.jpg"
+                alt="Sunidhi" loading="eager" />
+              <div class="product-card__overlay"><span class="btn btn--ghost btn--sm"
+                  style="position: absolute; top:50%; left:50%; transform:translate(-50%,-50%);">Open Catalog</span>
+              </div>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Sunidhi</h3>
+              <p class="product-card__desc">Premium wholesale saree.</p>
+              
+              
+              <a id="wa-btn-20" href="https://wa.me/919428393320?text=Hi%20M.R.%20Textile%2C%20I%20am%20a%20retailer%20and%20I%20want%20to%20inquire%20about%20bulk%20ordering%20from%20your%20collection." target="_blank" rel="noopener"
+                class="btn btn--gold product-card__btn">Send Inquiry</a>
+            </div>
+          </div>
+
+          <div class="product-card" data-reveal="rise" data-reveal-group="products"
+            data-product-title="Rachana"
+            data-product-desc=""
+            data-product-images="images/sarees/fancy-patern-sarees/saree_106.jpg"
+            data-product-colors="Multiple Options"
+            data-product-fabric="Premium Fabric"
+            data-product-occasions="Retail &amp; Wholesale">
+            <div class="product-card__img-container" role="button" aria-label="View Fancy Sarees catalog gallery">
+              
+              <img src="images/sarees/fancy-patern-sarees/saree_106.jpg"
+                alt="Rachana" loading="eager" />
+              <div class="product-card__overlay"><span class="btn btn--ghost btn--sm"
+                  style="position: absolute; top:50%; left:50%; transform:translate(-50%,-50%);">Open Catalog</span>
+              </div>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Rachana</h3>
+              <p class="product-card__desc">Premium wholesale saree.</p>
+              
+              
+              <a id="wa-btn-21" href="https://wa.me/919428393320?text=Hi%20M.R.%20Textile%2C%20I%20am%20a%20retailer%20and%20I%20want%20to%20inquire%20about%20bulk%20ordering%20from%20your%20collection." target="_blank" rel="noopener"
+                class="btn btn--gold product-card__btn">Send Inquiry</a>
+            </div>
+          </div>
+
+          <div class="product-card" data-reveal="rise" data-reveal-group="products"
+            data-product-title="Radha Rani Digital"
+            data-product-desc=""
+            data-product-images="images/sarees/fancy-patern-sarees/saree_107.jpg"
+            data-product-colors="Multiple Options"
+            data-product-fabric="Premium Fabric"
+            data-product-occasions="Retail &amp; Wholesale">
+            <div class="product-card__img-container" role="button" aria-label="View Fancy Sarees catalog gallery">
+              
+              <img src="images/sarees/fancy-patern-sarees/saree_107.jpg"
+                alt="Radha Rani Digital" loading="eager" />
+              <div class="product-card__overlay"><span class="btn btn--ghost btn--sm"
+                  style="position: absolute; top:50%; left:50%; transform:translate(-50%,-50%);">Open Catalog</span>
+              </div>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Radha Rani Digital</h3>
+              <p class="product-card__desc">Premium wholesale saree.</p>
+              
+              
+              <a id="wa-btn-22" href="https://wa.me/919428393320?text=Hi%20M.R.%20Textile%2C%20I%20am%20a%20retailer%20and%20I%20want%20to%20inquire%20about%20bulk%20ordering%20from%20your%20collection." target="_blank" rel="noopener"
+                class="btn btn--gold product-card__btn">Send Inquiry</a>
+            </div>
+          </div>
+
+          <div class="product-card" data-reveal="rise" data-reveal-group="products"
+            data-product-title="Rainbow"
+            data-product-desc=""
+            data-product-images="images/sarees/fancy-patern-sarees/saree_108.jpg"
+            data-product-colors="Multiple Options"
+            data-product-fabric="Premium Fabric"
+            data-product-occasions="Retail &amp; Wholesale">
+            <div class="product-card__img-container" role="button" aria-label="View Fancy Sarees catalog gallery">
+              
+              <img src="images/sarees/fancy-patern-sarees/saree_108.jpg"
+                alt="Rainbow" loading="lazy" />
+              <div class="product-card__overlay"><span class="btn btn--ghost btn--sm"
+                  style="position: absolute; top:50%; left:50%; transform:translate(-50%,-50%);">Open Catalog</span>
+              </div>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Rainbow</h3>
+              <p class="product-card__desc">Premium wholesale saree.</p>
+              
+              
+              <a id="wa-btn-23" href="https://wa.me/919428393320?text=Hi%20M.R.%20Textile%2C%20I%20am%20a%20retailer%20and%20I%20want%20to%20inquire%20about%20bulk%20ordering%20from%20your%20collection." target="_blank" rel="noopener"
+                class="btn btn--gold product-card__btn">Send Inquiry</a>
+            </div>
           </div>
         </div>
       </div>
@@ -366,21 +549,51 @@
         </div>
 
         <div class="masonry" data-gallery-grid data-reveal="fade">
-          <button class="masonry__item" data-full="images/sarees/fancy-patern-sarees/saree_1.jpeg" data-caption="Fancy Showcase Drape">
-            <img src="images/sarees/fancy-patern-sarees/saree_1.jpeg" alt="Fancy Saree" loading="lazy" />
-            <span class="masonry__overlay"><span class="masonry__caption"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" /></svg>Fancy Drape</span></span>
+
+          <button class="masonry__item" data-full="images/sarees/fancy-patern-sarees/saree_104.jpg"
+            data-caption="Chahat" data-category="fancy-sarees"
+            aria-label="Open Chahat image">
+            <img src="images/sarees/fancy-patern-sarees/saree_104.jpg" alt="Chahat" loading="lazy" />
+            <span class="masonry__overlay"><span class="masonry__caption">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+              </svg>Chahat</span></span>
           </button>
-          <button class="masonry__item" data-full="images/sarees/fancy-patern-sarees/saree_2.jpeg" data-caption="Fancy Showcase Drape">
-            <img src="images/sarees/fancy-patern-sarees/saree_2.jpeg" alt="Fancy Saree" loading="lazy" />
-            <span class="masonry__overlay"><span class="masonry__caption"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" /></svg>Fancy Drape</span></span>
+          <button class="masonry__item" data-full="images/sarees/fancy-patern-sarees/saree_105.jpg"
+            data-caption="Sunidhi" data-category="fancy-sarees"
+            aria-label="Open Sunidhi image">
+            <img src="images/sarees/fancy-patern-sarees/saree_105.jpg" alt="Sunidhi" loading="lazy" />
+            <span class="masonry__overlay"><span class="masonry__caption">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+              </svg>Sunidhi</span></span>
           </button>
-          <button class="masonry__item" data-full="images/sarees/fancy-patern-sarees/saree_3.jpeg" data-caption="Fancy Showcase Drape">
-            <img src="images/sarees/fancy-patern-sarees/saree_3.jpeg" alt="Fancy Saree" loading="lazy" />
-            <span class="masonry__overlay"><span class="masonry__caption"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" /></svg>Fancy Drape</span></span>
+          <button class="masonry__item" data-full="images/sarees/fancy-patern-sarees/saree_106.jpg"
+            data-caption="Rachana" data-category="fancy-sarees"
+            aria-label="Open Rachana image">
+            <img src="images/sarees/fancy-patern-sarees/saree_106.jpg" alt="Rachana" loading="lazy" />
+            <span class="masonry__overlay"><span class="masonry__caption">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+              </svg>Rachana</span></span>
           </button>
-          <button class="masonry__item" data-full="images/sarees/fancy-patern-sarees/saree_4.jpeg" data-caption="Fancy Showcase Drape">
-            <img src="images/sarees/fancy-patern-sarees/saree_4.jpeg" alt="Fancy Saree" loading="lazy" />
-            <span class="masonry__overlay"><span class="masonry__caption"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" /></svg>Fancy Drape</span></span>
+          <button class="masonry__item" data-full="images/sarees/fancy-patern-sarees/saree_107.jpg"
+            data-caption="Radha Rani Digital" data-category="fancy-sarees"
+            aria-label="Open Radha Rani Digital image">
+            <img src="images/sarees/fancy-patern-sarees/saree_107.jpg" alt="Radha Rani Digital" loading="lazy" />
+            <span class="masonry__overlay"><span class="masonry__caption">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+              </svg>Radha Rani Digital</span></span>
+          </button>
+          <button class="masonry__item" data-full="images/sarees/fancy-patern-sarees/saree_108.jpg"
+            data-caption="Rainbow" data-category="fancy-sarees"
+            aria-label="Open Rainbow image">
+            <img src="images/sarees/fancy-patern-sarees/saree_108.jpg" alt="Rainbow" loading="lazy" />
+            <span class="masonry__overlay"><span class="masonry__caption">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+              </svg>Rainbow</span></span>
           </button>
         </div>
       </div>

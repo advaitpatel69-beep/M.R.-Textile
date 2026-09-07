@@ -1,5 +1,126 @@
 [
   {
+    "id": 29,
+    "code": "saree_114",
+    "name": "Universe",
+    "category": "silk-sarees",
+    "description": "",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/silk-sarees/saree_114.jpg",
+    "variants": []
+  },
+  {
+    "id": 28,
+    "code": "saree_113",
+    "name": "Sajni",
+    "category": "silk-sarees",
+    "description": "",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/silk-sarees/saree_113.jpg",
+    "variants": []
+  },
+  {
+    "id": 27,
+    "code": "saree_112",
+    "name": "Mohabbat",
+    "category": "silk-sarees",
+    "description": "",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/silk-sarees/saree_112.jpg",
+    "variants": []
+  },
+  {
+    "id": 26,
+    "code": "saree_111",
+    "name": "Pritam",
+    "category": "party-wear",
+    "description": "",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/partywear/saree_111.jpg",
+    "variants": []
+  },
+  {
+    "id": 25,
+    "code": "saree_110",
+    "name": "Sajni",
+    "category": "party-wear",
+    "description": "",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/partywear/saree_110.jpg",
+    "variants": []
+  },
+  {
+    "id": 24,
+    "code": "saree_109",
+    "name": "Pritam",
+    "category": "party-wear",
+    "description": "",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/partywear/saree_109.jpg",
+    "variants": []
+  },
+  {
+    "id": 23,
+    "code": "saree_108",
+    "name": "Rainbow",
+    "category": "fancy-sarees",
+    "description": "",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/fancy-patern-sarees/saree_108.jpg",
+    "variants": []
+  },
+  {
+    "id": 22,
+    "code": "saree_107",
+    "name": "Radha Rani Digital",
+    "category": "fancy-sarees",
+    "description": "",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/fancy-patern-sarees/saree_107.jpg",
+    "variants": []
+  },
+  {
+    "id": 21,
+    "code": "saree_106",
+    "name": "Rachana",
+    "category": "fancy-sarees",
+    "description": "",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/fancy-patern-sarees/saree_106.jpg",
+    "variants": []
+  },
+  {
+    "id": 20,
+    "code": "saree_105",
+    "name": "Sunidhi",
+    "category": "fancy-sarees",
+    "description": "",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/fancy-patern-sarees/saree_105.jpg",
+    "variants": []
+  },
+  {
+    "id": 19,
+    "code": "saree_104",
+    "name": "Chahat",
+    "category": "fancy-sarees",
+    "description": "Elegant Fancy saree with delicate floral motifs and a richly contrast pallu.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/fancy-patern-sarees/saree_104.jpg",
+    "variants": []
+  },
+  {
     "id": 1,
     "code": "saree_1",
     "name": "Mohabbat",
@@ -8,6 +129,17 @@
     "status": "active",
     "featured": false,
     "mainImage": "images/sarees/silk-sarees/saree_1.jpeg",
+    "variants": []
+  },
+  {
+    "id": 18,
+    "code": "saree_103",
+    "name": "Classic",
+    "category": "brasso-sarees",
+    "description": "Elegant Brasso saree with golden motifs and a rich border.",
+    "status": "active",
+    "featured": false,
+    "mainImage": "images/sarees/brasso-sarees/saree_103.jpg",
     "variants": []
   },
   {
@@ -57,7 +189,7 @@
   {
     "id": 4,
     "code": "saree_4",
-    "name": "Silk #4",
+    "name": "Aashiqui",
     "category": "silk-sarees",
     "description": "High-quality Silk Sarees wholesale saree with beautiful finish.",
     "status": "active",
@@ -112,7 +244,7 @@
   {
     "id": 9,
     "code": "saree_10",
-    "name": "Printed #10",
+    "name": "GST",
     "category": "printed-sarees",
     "description": "High-quality Printed Sarees wholesale saree with beautiful finish.",
     "status": "active",

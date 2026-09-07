@@ -192,6 +192,7 @@
     
     
     
+    
     <section class="category-hero" style="background-image: url('images/sarees/printed-sarees/saree_102.jpg');" id="hero">
       <div class="category-hero__content" data-reveal="fade">
         <nav class="category-hero__breadcrumbs" aria-label="Breadcrumb">
@@ -205,6 +206,7 @@
     </section>
 
     <!-- ============================== CATEGORY INTRO ============================== -->
+    
     
     
     
@@ -350,6 +352,66 @@
       if (grid && grid.parentNode) grid.parentNode.insertBefore(empty, grid.nextSibling);
     })();
     </script>
+
+    <!-- Product search bar: hidden until JS runs -->
+    <div id="mr-search-wrap" style="display:none;margin:0 0 24px;">
+      <div style="
+        display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+        background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);
+        border-radius:50px;padding:10px 20px;
+      ">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" style="opacity:.5;flex-shrink:0">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input id="mr-search-input" type="search" placeholder="Search products…"
+          aria-label="Search products in this collection"
+          style="
+            flex:1;min-width:180px;background:transparent;border:none;
+            outline:none;font-size:1rem;color:inherit;font-family:inherit;
+          " />
+        <span id="mr-search-count" style="font-size:0.82rem;opacity:.55;white-space:nowrap">
+          7 products
+        </span>
+      </div>
+      <p id="mr-search-empty" style="
+        display:none;text-align:center;padding:40px 0;opacity:.5;font-size:.95rem;
+      ">No products matched your search.</p>
+    </div>
+    <script>
+    (function(){
+      var wrap  = document.getElementById('mr-search-wrap');
+      var input = document.getElementById('mr-search-input');
+      var count = document.getElementById('mr-search-count');
+      var empty = document.getElementById('mr-search-empty');
+      if (!wrap || !input) return;
+      wrap.style.display = 'block'; // reveal — we know JS is running
+
+      function getCards() {
+        return Array.from(document.querySelectorAll('.product-grid .product-card'));
+      }
+
+      function filter() {
+        var q    = input.value.trim().toLowerCase();
+        var cards = getCards();
+        var shown = 0;
+        cards.forEach(function(card) {
+          var title = (card.getAttribute('data-product-title') || '').toLowerCase();
+          var desc  = (card.getAttribute('data-product-desc')  || '').toLowerCase();
+          var match = !q || title.indexOf(q) !== -1 || desc.indexOf(q) !== -1;
+          card.style.display = match ? '' : 'none';
+          if (match) shown++;
+        });
+        count.textContent = shown + ' product' + (shown !== 1 ? 's' : '');
+        empty.style.display = shown === 0 && q ? 'block' : 'none';
+      }
+
+      input.addEventListener('input', filter);
+      // Place empty-message after grid when it exists
+      var grid = document.querySelector('.product-grid');
+      if (grid && grid.parentNode) grid.parentNode.insertBefore(empty, grid.nextSibling);
+    })();
+    </script>
 <div class="product-grid">
 
           <div class="product-card" data-reveal="rise" data-reveal-group="products"
@@ -372,13 +434,13 @@
               <p class="product-card__desc">Fancy Print, Sirosgi Work, 6-30 cut</p>
               
               
-              <a id="wa-btn-16" href="https://wa.me/919428393320" target="_blank" rel="noopener"
+              <a id="wa-btn-16" href="https://wa.me/919428393320?text=Hi%20M.R.%20Textile%2C%20I%20am%20a%20retailer%20and%20I%20want%20to%20inquire%20about%20bulk%20ordering%20from%20your%20collection." target="_blank" rel="noopener"
                 class="btn btn--gold product-card__btn">Send Inquiry</a>
             </div>
           </div>
 
           <div class="product-card" data-reveal="rise" data-reveal-group="products"
-            data-product-title="Printed #10"
+            data-product-title="GST"
             data-product-desc="High-quality Printed Sarees wholesale saree with beautiful finish."
             data-product-images="images/sarees/printed-sarees/saree_10.jpeg"
             data-product-colors="Multiple Options"
@@ -387,17 +449,17 @@
             <div class="product-card__img-container" role="button" aria-label="View Printed Sarees catalog gallery">
               
               <img src="images/sarees/printed-sarees/saree_10.jpeg"
-                alt="Printed #10" loading="eager" />
+                alt="GST" loading="eager" />
               <div class="product-card__overlay"><span class="btn btn--ghost btn--sm"
                   style="position: absolute; top:50%; left:50%; transform:translate(-50%,-50%);">Open Catalog</span>
               </div>
             </div>
             <div class="product-card__body">
-              <h3 class="product-card__title">Printed #10</h3>
+              <h3 class="product-card__title">GST</h3>
               <p class="product-card__desc">High-quality Printed Sarees wholesale saree with beautiful finish.</p>
               
               
-              <a id="wa-btn-9" href="https://wa.me/919428393320" target="_blank" rel="noopener"
+              <a id="wa-btn-9" href="https://wa.me/919428393320?text=Hi%20M.R.%20Textile%2C%20I%20am%20a%20retailer%20and%20I%20want%20to%20inquire%20about%20bulk%20ordering%20from%20your%20collection." target="_blank" rel="noopener"
                 class="btn btn--gold product-card__btn">Send Inquiry</a>
             </div>
           </div>
@@ -422,7 +484,7 @@
               <p class="product-card__desc">High-quality Printed Sarees wholesale saree with beautiful finish.</p>
               
               
-              <a id="wa-btn-10" href="https://wa.me/919428393320" target="_blank" rel="noopener"
+              <a id="wa-btn-10" href="https://wa.me/919428393320?text=Hi%20M.R.%20Textile%2C%20I%20am%20a%20retailer%20and%20I%20want%20to%20inquire%20about%20bulk%20ordering%20from%20your%20collection." target="_blank" rel="noopener"
                 class="btn btn--gold product-card__btn">Send Inquiry</a>
             </div>
           </div>
@@ -449,7 +511,7 @@
 # Different Design</p>
               
               
-              <a id="wa-btn-11" href="https://wa.me/919428393320" target="_blank" rel="noopener"
+              <a id="wa-btn-11" href="https://wa.me/919428393320?text=Hi%20M.R.%20Textile%2C%20I%20am%20a%20retailer%20and%20I%20want%20to%20inquire%20about%20bulk%20ordering%20from%20your%20collection." target="_blank" rel="noopener"
                 class="btn btn--gold product-card__btn">Send Inquiry</a>
             </div>
           </div>
@@ -474,7 +536,7 @@
               <p class="product-card__desc">High-quality Printed Sarees wholesale saree with beautiful finish.</p>
               
               
-              <a id="wa-btn-12" href="https://wa.me/919428393320" target="_blank" rel="noopener"
+              <a id="wa-btn-12" href="https://wa.me/919428393320?text=Hi%20M.R.%20Textile%2C%20I%20am%20a%20retailer%20and%20I%20want%20to%20inquire%20about%20bulk%20ordering%20from%20your%20collection." target="_blank" rel="noopener"
                 class="btn btn--gold product-card__btn">Send Inquiry</a>
             </div>
           </div>
@@ -499,7 +561,7 @@
               <p class="product-card__desc">High-quality Printed Sarees wholesale saree with beautiful finish.</p>
               
               
-              <a id="wa-btn-13" href="https://wa.me/919428393320" target="_blank" rel="noopener"
+              <a id="wa-btn-13" href="https://wa.me/919428393320?text=Hi%20M.R.%20Textile%2C%20I%20am%20a%20retailer%20and%20I%20want%20to%20inquire%20about%20bulk%20ordering%20from%20your%20collection." target="_blank" rel="noopener"
                 class="btn btn--gold product-card__btn">Send Inquiry</a>
             </div>
           </div>
@@ -524,7 +586,7 @@
               <p class="product-card__desc">High-quality Printed Sarees wholesale saree with beautiful finish.</p>
               
               
-              <a id="wa-btn-14" href="https://wa.me/919428393320" target="_blank" rel="noopener"
+              <a id="wa-btn-14" href="https://wa.me/919428393320?text=Hi%20M.R.%20Textile%2C%20I%20am%20a%20retailer%20and%20I%20want%20to%20inquire%20about%20bulk%20ordering%20from%20your%20collection." target="_blank" rel="noopener"
                 class="btn btn--gold product-card__btn">Send Inquiry</a>
             </div>
           </div>
@@ -550,13 +612,13 @@
               </svg>Malai</span></span>
           </button>
           <button class="masonry__item" data-full="images/sarees/printed-sarees/saree_10.jpeg"
-            data-caption="Printed #10" data-category="printed-sarees"
-            aria-label="Open Printed #10 image">
-            <img src="images/sarees/printed-sarees/saree_10.jpeg" alt="Printed #10" loading="lazy" />
+            data-caption="GST" data-category="printed-sarees"
+            aria-label="Open GST image">
+            <img src="images/sarees/printed-sarees/saree_10.jpeg" alt="GST" loading="lazy" />
             <span class="masonry__overlay"><span class="masonry__caption">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
-              </svg>Printed #10</span></span>
+              </svg>GST</span></span>
           </button>
           <button class="masonry__item" data-full="images/sarees/printed-sarees/saree_11.jpeg"
             data-caption="Raga Diamond" data-category="printed-sarees"

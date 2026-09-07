@@ -8,7 +8,7 @@
     "description": "Premium wholesale silk sarees from Surat",
     "displayOrder": 1,
     "homepageVisible": true,
-    "productCount": 8
+    "productCount": 11
   },
   {
     "id": 2,
@@ -30,7 +30,7 @@
     "description": "Wholesale brasso sarees Surat",
     "displayOrder": 3,
     "homepageVisible": true,
-    "productCount": 1
+    "productCount": 2
   },
   {
     "id": 4,
@@ -59,22 +59,22 @@
     "slug": "party-wear",
     "name": "Party Wear Sarees",
     "htmlFile": "party-wear.html",
-    "heroImage": "images/sarees/partywear/saree_1.jpeg",
+    "heroImage": "images/sarees/partywear/saree_109.jpg",
     "description": "Party wear sarees wholesale",
     "displayOrder": 6,
     "homepageVisible": true,
-    "productCount": 0
+    "productCount": 3
   },
   {
     "id": 7,
     "slug": "fancy-sarees",
     "name": "Fancy Sarees",
     "htmlFile": "fancy.html",
-    "heroImage": "images/sarees/fancy-patern-sarees/saree_1.jpeg",
+    "heroImage": "images/sarees/fancy-patern-sarees/saree_104.jpg",
     "description": "Fancy pattern sarees wholesale",
     "displayOrder": 7,
     "homepageVisible": true,
-    "productCount": 0
+    "productCount": 5
   },
   {
     "id": 8,
