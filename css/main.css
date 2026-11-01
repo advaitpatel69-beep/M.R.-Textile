@@ -1961,7 +1961,8 @@ noscript img {
 }
 
 .form-field input,
-.form-field textarea {
+.form-field textarea,
+.form-field select {
   border-bottom: 1.5px solid var(--color-border);
   padding-block: 0.65em;
   font-size: var(--fs-body);
@@ -1970,19 +1971,41 @@ noscript img {
   transition: border-color var(--dur-fast) var(--ease-silk);
 }
 
+.form-field select {
+  width: 100%;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23241b14' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  padding-right: 1.8rem;
+}
+
+.form-field select option {
+  color: #241b14;
+  background: #fff;
+}
+
+.form-field select option:disabled {
+  color: #aaa;
+}
+
 .form-field textarea {
   resize: vertical;
   min-height: 100px;
 }
 
 .form-field input:focus-visible,
-.form-field textarea:focus-visible {
+.form-field textarea:focus-visible,
+.form-field select:focus-visible {
   outline: none;
   border-color: var(--color-maroon);
 }
 
 .form-field.has-error input,
-.form-field.has-error textarea {
+.form-field.has-error textarea,
+.form-field.has-error select {
   border-color: var(--color-error);
 }
 
@@ -3265,6 +3288,7 @@ noscript img {
 .form-field__hint {
   display: block;
   font-size: 0.78rem;
-  color: var(--color-text-muted, #888);
-  margin-top: 0.25rem;
+  color: var(--color-ink-faint);
+  margin-top: 0.3rem;
+  line-height: 1.4;
 }
