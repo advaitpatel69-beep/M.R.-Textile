@@ -59,7 +59,18 @@
     "+91 9428393320",
     "+91 9427810031"
   ],
-  "priceRange": "Wholesale enquiry",
+  "foundingDate": "2004",
+  "priceRange": "₹350 and above per piece",
+  "areaServed": [
+    {"@type": "State", "name": "Gujarat"},
+    {"@type": "State", "name": "Uttar Pradesh"},
+    {"@type": "State", "name": "Bihar"},
+    {"@type": "State", "name": "Maharashtra"},
+    {"@type": "State", "name": "Madhya Pradesh"},
+    {"@type": "State", "name": "Delhi"},
+    {"@type": "State", "name": "Chhattisgarh"},
+    {"@type": "State", "name": "Jharkhand"}
+  ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "133, 1st Floor, Manish Market, Ring Road",
@@ -1021,8 +1032,21 @@
             </button>
             <div class="faq-answer" aria-hidden="true">
               <div class="faq-answer-inner">
-                <p>Yes — as a wholesale supplier we work in bulk quantities rather than single pieces. Exact minimums
-                  vary by category, so please contact us for current MOQs.</p>
+                <p>Yes. We sell set-wise only, and our minimum order is 36 to 42 pcs per set. Our minimum wholesale price starts at ₹350 per piece.</p>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What is your price range per piece?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" aria-hidden="true">
+              <div class="faq-answer-inner">
+                <p>Our wholesale range starts at ₹350 per piece. When you send an inquiry, choose your budget range: ₹350–₹499, ₹500–₹699, ₹700–₹999 or ₹1,000 and above, so we can share the right designs.</p>
               </div>
             </div>
           </div>
@@ -1047,8 +1071,21 @@
             </button>
             <div class="faq-answer" aria-hidden="true">
               <div class="faq-answer-inner">
-                <p>We work with retail partners across India. Share your city and order size when you reach out, and
-                  we'll confirm dispatch options for your location.</p>
+                <p>Yes. Our major supply states are Uttar Pradesh, Bihar, Maharashtra, Madhya Pradesh, Delhi, Chhattisgarh and Jharkhand. Share your city and order size when you reach out, and we'll confirm dispatch options for your location.</p>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How long have you been in business?
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" aria-hidden="true">
+              <div class="faq-answer-inner">
+                <p>M.R. Textile has been in the wholesale saree business since 2004, from Manish Market, Surat.</p>
               </div>
             </div>
           </div>
@@ -1202,6 +1239,18 @@
                 <div class="form-field form-field--full">
                   <label for="cf-email">Email <span class="req">*</span></label>
                   <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="e.g. rahul@yourstore.com" required />
+                  <span class="form-field__error" role="alert"></span>
+                </div>
+                <div class="form-field form-field--full">
+                  <label for="cf-saree-range">Per Pcs Saree Range <span class="req">*</span></label>
+                  <select id="cf-saree-range" name="saree-range" required aria-describedby="cf-saree-range-hint">
+                    <option value="" disabled selected>Select range</option>
+                    <option value="₹350 – ₹499">₹350 – ₹499</option>
+                    <option value="₹500 – ₹699">₹500 – ₹699</option>
+                    <option value="₹700 – ₹999">₹700 – ₹999</option>
+                    <option value="₹1,000 &amp; above">₹1,000 &amp; above</option>
+                  </select>
+                  <span id="cf-saree-range-hint" class="form-field__hint">Minimum price ₹350 per pc · MOQ 36–42 pcs, set-wise only</span>
                   <span class="form-field__error" role="alert"></span>
                 </div>
                 <div class="form-field form-field--full">

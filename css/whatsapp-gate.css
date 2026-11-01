@@ -270,3 +270,10 @@
   flex-shrink: 0;
   color: #25D366;
 }
+
+.wa-gate__hint {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.25rem;
+}

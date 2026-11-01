@@ -19,6 +19,7 @@ const VALIDATORS = {
       ? ""
       : "Enter a valid 10-digit phone number.",
   email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? "" : "Enter a valid email address."),
+  'saree-range': (v) => (v ? '' : 'Please select a price range.'),
   message: (v) => (v.trim().length >= 10 ? "" : "Tell us a little more (10+ characters)."),
 };
 
@@ -101,6 +102,7 @@ export function initContactForm() {
       `Phone: ${value("phone")}`,
       `Email: ${value("email")}`,
       "",
+      `Per pcs saree range: ${value('saree-range')}`,
       `Requirement: ${value("message")}`,
     ].join("\n");
 
@@ -118,7 +120,7 @@ export function initContactForm() {
 
     if (!isValid) {
       showStatus("error", "Please correct the highlighted fields and try again.");
-      form.querySelector(".has-error input, .has-error textarea")?.focus();
+      form.querySelector(".has-error input, .has-error select, .has-error textarea")?.focus();
       return;
     }
 

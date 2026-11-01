@@ -76,6 +76,19 @@ function buildModal() {
           </div>
         </div>
 
+        <div class="wa-gate__field">
+          <label class="wa-gate__label" for="wa-saree-range">Per Pcs Saree Range <span aria-hidden="true">*</span></label>
+          <select class="wa-gate__input" id="wa-saree-range" name="wa-saree-range" required aria-describedby="wa-saree-range-hint">
+            <option value="" disabled selected>Select range</option>
+            <option value="₹350 – ₹499">₹350 – ₹499</option>
+            <option value="₹500 – ₹699">₹500 – ₹699</option>
+            <option value="₹700 – ₹999">₹700 – ₹999</option>
+            <option value="₹1,000 &amp; above">₹1,000 &amp; above</option>
+          </select>
+          <span id="wa-saree-range-hint" class="wa-gate__hint">Minimum price ₹350 per pc · MOQ 36–42 pcs, set-wise only</span>
+          <span class="wa-gate__error" id="wa-saree-range-err" hidden>Please select a price range.</span>
+        </div>
+
         <button type="submit" class="wa-gate__submit" id="wa-gate-submit">
           <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="20" aria-hidden="true">
             <circle cx="16" cy="16" r="16" fill="white"/>
@@ -104,11 +117,13 @@ function updateIntentChips(overlay, lang) {
   container.innerHTML = chips;
 }
 
-function buildMessage(name, city, intent, lang) {
+function buildMessage(name, city, intent, lang, sareeRange) {
   if (lang === "hi") {
-    return `नमस्ते M.R. Textile, मैं *${name}* हूँ, *${city}* से। मुझे ${intent} के बारे में जानकारी चाहिए।`;
+    return `नमस्ते M.R. Textile, मैं *${name}* हूँ, *${city}* से। मुझे ${intent} के बारे में जानकारी चाहिए।
+प्रति पीस साड़ी रेंज: ${sareeRange}`;
   }
-  return `Hi M.R. Textile, I'm *${name}* from *${city}*. My inquiry is about: ${intent}.`;
+  return `Hi M.R. Textile, I'm *${name}* from *${city}*. My inquiry is about: ${intent}.
+Per pcs saree range: ${sareeRange}`;
 }
 
 function openGate(e) {
@@ -147,20 +162,24 @@ function openGate(e) {
 
   overlay.querySelector("#wa-gate-form").addEventListener("submit", (ev) => {
     ev.preventDefault();
-    const name   = overlay.querySelector("#wa-name").value.trim();
-    const city   = overlay.querySelector("#wa-city").value.trim();
-    const intent = overlay.querySelector('input[name="wa-intent"]:checked')?.value || "General Inquiry";
-    const lang   = overlay.querySelector('input[name="wa-lang"]:checked')?.value || "hi";
+    const name       = overlay.querySelector("#wa-name").value.trim();
+    const city       = overlay.querySelector("#wa-city").value.trim();
+    const intent     = overlay.querySelector('input[name="wa-intent"]:checked')?.value || "General Inquiry";
+    const lang       = overlay.querySelector('input[name="wa-lang"]:checked')?.value || "hi";
+    const sareeRange = overlay.querySelector('#wa-saree-range').value;
 
-    const nameErr = overlay.querySelector("#wa-name-err");
-    const cityErr = overlay.querySelector("#wa-city-err");
-    nameErr.hidden = true;
-    cityErr.hidden = true;
+    const nameErr      = overlay.querySelector("#wa-name-err");
+    const cityErr      = overlay.querySelector("#wa-city-err");
+    const sareeRangeErr = overlay.querySelector('#wa-saree-range-err');
+    nameErr.hidden      = true;
+    cityErr.hidden      = true;
+    sareeRangeErr.hidden = true;
 
     if (!name) { nameErr.hidden = false; overlay.querySelector("#wa-name").focus(); return; }
     if (!city) { cityErr.hidden = false; overlay.querySelector("#wa-city").focus(); return; }
+    if (!sareeRange) { sareeRangeErr.hidden = false; overlay.querySelector('#wa-saree-range').focus(); return; }
 
-    const msg = buildMessage(name, city, intent, lang);
+    const msg = buildMessage(name, city, intent, lang, sareeRange);
     const url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
     window.open(url, "_blank", "noopener,noreferrer");
     close();

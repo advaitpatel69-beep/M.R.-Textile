@@ -1819,3 +1819,10 @@ noscript img {
   100% { transform: scale(1.55); opacity: 0; }
 }
 
+
+.form-field__hint {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-text-muted, #888);
+  margin-top: 0.25rem;
+}
