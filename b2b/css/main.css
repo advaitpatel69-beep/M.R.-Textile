@@ -1539,8 +1539,7 @@ noscript img {
 }
 
 .form-field input,
-.form-field textarea,
-.form-field select {
+.form-field textarea {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   padding: 0.65em 0.8em;
@@ -1551,6 +1550,13 @@ noscript img {
 }
 
 .form-field select {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.65em 2rem 0.65em 0.8em;
+  font-size: var(--fs-body);
+  color: var(--color-ink);
+  background-color: var(--color-ivory);
+  transition: border-color var(--dur-fast) linear;
   width: 100%;
   cursor: pointer;
   appearance: none;
@@ -1559,8 +1565,6 @@ noscript img {
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 12px;
-  padding-right: 2rem;
-  background-color: var(--color-ivory);
 }
 
 .form-field select option {
